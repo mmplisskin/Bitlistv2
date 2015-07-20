@@ -1,0 +1,11 @@
+<h1>Items#show</h1>
+<p>Find me in app/views/items/show.html.erb</p>
+  <%= @item.name %>
+  <%= @item.phone_number %>
+  <%= @item.description %>
+  <%= @item.price %>
+  <%= @item.city %>
+  <% @item.state %>
+  <% @item.zipcode %>
+<%=  %>
+<%= link_to "Back To " + "#{@item.category.name}", category_path(@item.category_id) %>

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   		@current_user ||= User.find_by(id: session[:user_id])
 	end
 	def authorized?
-  		redirect_to root_path unless current_ouser
+  		redirect_to root_path unless current_user
   	end
 	helper_method :current_user
 end

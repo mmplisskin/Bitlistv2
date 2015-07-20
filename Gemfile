@@ -35,6 +35,8 @@ gem 'font-awesome-sass'
 
 gem 'bootstrap-sass', '~> 3.3.4.1'
 
+gem 'clockwork', '~> 1.2.0'
+
 
 group :production do
   gem 'rails_12factor'

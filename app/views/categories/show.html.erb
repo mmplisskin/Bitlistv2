@@ -1,0 +1,10 @@
+<%= @category.name %>
+
+
+
+<% @category.items.each do |item| %>
+  <%= link_to item.name, category_item_path(@category.id, item.id) %>
+
+<% end %>
+
+<%= link_to "Back to All Categories", categories_path %>

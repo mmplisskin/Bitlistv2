@@ -4,9 +4,18 @@
  *= require_self
  */
 
- 
+
  @import "bootstrap-sprockets";
 @import "bootstrap";
 
   @import "font-awesome-sprockets";
   @import "font-awesome";
+
+
+  /********************************
+            Static Pages About
+  ********************************/
+
+  .test {
+    text-align: center;
+  }

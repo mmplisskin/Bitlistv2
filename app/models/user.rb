@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :items
   class << self
 	  def from_omniauth(auth_hash)
 	    user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])

@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   protect_from_forgery with: :null_session
 
 
@@ -25,18 +25,18 @@ class UserController < ApplicationController
   end
 
 
-  # def show
-  #   @user = user.find(params[:id])
-  #   respond_to do |format|
-  #   format.html {
-  #       render
-  #   }
-  #   format.json {
-  #       render json: @user
-  #       redirect_to(:controller => 'posts', :action => 'index')
-  #   }
-  #   end
-  # end
+  def show
+    @user = User.find(params[:id])
+    respond_to do |format|
+    format.html {
+        render
+    }
+    format.json {
+        render json: @user
+        # redirect_to(:controller => 'posts', :action => 'index')
+    }
+    end
+  end
 
   def update
     @user = User.find(params[:id])

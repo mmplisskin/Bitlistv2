@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'category/index'
 
-  get 'category/show'
+  #
+  # get 'rates/index'
+  #
+  # get 'items/index'
+  #
+  # get 'items/show'
+  #
+  # get 'items/new'
+  #
+  # get 'items/create'
+  #
+  # get 'items/update'
 
   get "login"     => 'sessions#new'
   post "login"    => 'sessions#create'
@@ -12,10 +22,27 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
 
-resources :users
+  resources :users
 
 
-root 'sessions#new'
+
+
+
+  resource :items
+
+
+  resources :categories do
+    resources :items
+  end
+
+  get '/static_pages/about' => 'static_pages#about'
+
+  # resources :categories
+
+
+
+
+root 'categories#index'
 
   # get 'sessions/show'
   # get 'auth/logout' => 'sessions#destroy'
