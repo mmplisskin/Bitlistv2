@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       #
 			# end
 		end
-
+      redirect_to fuck shit
 	end
 
 	def destroy

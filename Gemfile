@@ -31,6 +31,10 @@ gem 'omniauth-facebook'
 #allows auth via google
 gem 'omniauth-google-oauth2'
 
+gem 'font-awesome-sass'
+
+gem 'bootstrap-sass', '~> 3.3.4.1'
+
 
 group :production do
   gem 'rails_12factor'
