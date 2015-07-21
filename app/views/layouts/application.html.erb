@@ -33,6 +33,7 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
 <%= render 'layouts/nav' %>
+<%= render 'layouts/oauth' %>
 
 <div class="ui container">
       <% flash.each do |name, msg| %>
@@ -42,7 +43,7 @@
         <% end %>
       <% end %>
       <%= yield %>
-    </div>
+</div>
 
 
 

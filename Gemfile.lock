@@ -45,6 +45,7 @@ GEM
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -69,6 +70,7 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
+    geocoder (1.2.9)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     hashie (3.4.2)
@@ -191,10 +193,12 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.4.1)
+  bootstrap_form
   clockwork (~> 1.2.0)
   coffee-rails (~> 4.1.0)
   figaro
   font-awesome-sass
+  geocoder
   jbuilder (~> 2.0)
   jquery-rails
   omniauth

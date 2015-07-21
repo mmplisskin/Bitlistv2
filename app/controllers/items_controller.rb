@@ -28,7 +28,25 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item=Item.find(params[:id])
+    if @item.update_attributes(item_params)
+      redirect_to category_item_path(@item.category_id, @item.id)
+    else
+      render :edit
+    end
   end
+
+  def destroy
+      @item=Item.find(params[:id])
+      @item.destroy
+      redirect_to root_path
+  end
+
+
+  def search
+    @items = Item.search(params)
+  end
+
 
 private
   def item_params

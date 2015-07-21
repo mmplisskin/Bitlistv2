@@ -37,6 +37,9 @@ gem 'bootstrap-sass', '~> 3.3.4.1'
 
 gem 'clockwork', '~> 1.2.0'
 
+gem 'geocoder'
+
+gem 'bootstrap_form'
 
 group :production do
   gem 'rails_12factor'

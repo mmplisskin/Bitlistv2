@@ -1,0 +1,14 @@
+
+<%if @items !=nil%>
+    <%@items.each do |item|%>
+
+    <ul>
+      <h2>
+        <p><hr><%=link_to item.name, item_path(item.id)%></p></br>
+      </h2>
+    </ul>
+    <%end%>
+<%else flash.now.notice = " :( Sorry nothing matches your search criteria.. Please try again. " %>
+
+  <%end%>
+  <%=link_to "All categories", root_path%>

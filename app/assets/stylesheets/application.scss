@@ -1,15 +1,15 @@
 /*
 
- *= require_tree .
+
  *= require_self
+  *= require rails_bootstrap_forms
  */
 
 
  @import "bootstrap-sprockets";
-@import "bootstrap";
-
-  @import "font-awesome-sprockets";
-  @import "font-awesome";
+ @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
 
   /********************************
@@ -18,4 +18,33 @@
 
   .test {
     text-align: center;
+  }
+
+
+
+  /********************************
+            app.html
+  ********************************/
+
+
+  .ui.container {
+    margin-top: 6vh;
+  }
+
+
+  .modal-dialog {
+    padding-top: 28vh;
+  }
+  .modal-body{
+      padding-top: 4vh;
+      text-align: center;
+  }
+
+
+  #googleBTN {
+    margin-bottom: 2vh;
+  }
+
+  #facebookBTN {
+    margin-bottom: 2vh;
   }

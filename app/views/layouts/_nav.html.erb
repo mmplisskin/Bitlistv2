@@ -14,12 +14,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+          <li><a href="/static_pages/about">About</a></li>
           <% if current_user %>
           <li><a href="/users/<%=current_user.id%>"><i class="fa fa-user"></i> Account </a></li>
-          
+
 
           <% else %>
-          <li><a href="/auth/facebook">Sign Up</a></li>
+          <li><a href="/auth/facebook" data-toggle="modal" data-target="#myModal">Login</a></li>
           <% end %>
 <!-- <i class="fa fa-plus"></i> -->
         <!-- <li class="dropdown">
@@ -35,20 +36,35 @@
           </ul>
         </li> -->
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/static_pages/about">About</a></li>
+      <!-- <form class="nav navbar-nav navbar-right"> -->
 
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <input type="text" class="form-control" placeholder="location">
-          </div>
-          <button type="submit" class="btn btn-default">Search <i class="fa fa-search"></i></button>
 
+
+
+      </form>
+        <form class="navbar-form navbar-left" action="/items/new" >
+          <button type="submit", class="btn btn-primary"><i class="fa fa-plus"></i> Post</button>
         </form>
-        <% if current_user %>
-        <li>  <%= link_to '<i class="fa fa-sign-out"></i> Log Out'.html_safe, logout_path, method: :delete, class: 'btn btn-hidden'%></li>
-        <% end %>
+
+
+        <div class="nav navbar-nav navbar-right">
+          <% if current_user %>
+          <li> <%= link_to '<i class="fa fa-sign-out"></i> Log Out'.html_safe, logout_path, method: :delete, class: 'btn btn-hidden'%></li>
+          <% end %>
+        </div>
+
+
+      <%= form_tag search_items_path, class:"navbar-form navbar-right", method: :get do |f| %>
+      <div class="form-group">
+        <%= text_field_tag :search, nil, placeholder: 'search', class:"form-control" %>
+        <%= text_field_tag :location, nil, placeholder: 'near', class:"form-control" %>
+      </div>
+       <button type="submit" class="btn btn-default">Search <i class="fa fa-search"></i></button>
+
+       <%#= submit_tag '>' %>
+     <% end %>
+
+
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -59,7 +75,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li> -->
-      </ul>
+      <!-- </ul> -->
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

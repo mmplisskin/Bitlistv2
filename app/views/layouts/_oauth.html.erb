@@ -1,0 +1,32 @@
+<!-- <div id=login> -->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center>
+        <h4 class="modal-title" id="myModalLabel">Please Login</h4>
+      </center>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <%= link_to '<i class="fa fa-facebook"></i> Facebook'.html_safe, "/auth/facebook", class: 'btn btn-primary btn-lg', id:'facebookBTN'%>
+          </div>
+          <div class="row">
+              <%= link_to '<i class="fa fa-google-plus"></i> &nbsp&nbsp Google'.html_safe, "/auth/google", class: 'btn btn-danger btn-lg', id:'googleBTN'%>
+          </div>
+          <h5>  Bitlist will never sell your information or post to your account.</h5>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- <div clas="login_btn">
+
+  <button type="button" class="ui inverted huge black button" data-toggle="modal" data-target="#myModal" id="login_btn_main">
+    Login
+  </button>
+
+</div> -->
