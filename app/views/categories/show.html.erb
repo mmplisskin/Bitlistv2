@@ -4,7 +4,7 @@
     <%= link_to "Back to All Categories", categories_path %>
   </div>
 
-  <% @category.items.each do |item| %>
+  <% @items.each do |item| %>
   <div class="well well-lg" id="categoryNAMES">
   <div class="row">
     <div class="col-xs-2 col-md-2 alignTOP">
@@ -35,6 +35,7 @@
 
 
   <% end %>
+  <%= paginate @items %>
 </div>
 
 
