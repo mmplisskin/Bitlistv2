@@ -6,5 +6,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    items = Item.where(:category_id => @category.id)
+    @items = items.page(params[:page]).per(5)
   end
 end

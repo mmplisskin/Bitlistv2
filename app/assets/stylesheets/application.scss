@@ -74,6 +74,9 @@
     margin-bottom: 3vh;
   }
 
+  #checkBTN:hover{
+    -webkit-transform: scale(1.1,1.1);
+}
   .panel.panel-body.about{
     -moz-box-shadow:    inset 0 0 8px #000000;
     -webkit-box-shadow: inset 0 0 8px #000000;
@@ -119,6 +122,10 @@
     margin-bottom: 2vh;
   }
 
+  button.btn.btn-primary:hover {
+    -webkit-transform: scale(1.1,1.1);
+  }
+
   // .navbar-brand i{
   //   background-image: -webkit-linear-gradient(#F0E68C, #209);
   //   -webkit-background-clip: text;
@@ -144,6 +151,10 @@
     text-align: center;
     font-size: 13px;
 
+  }
+
+  textarea{
+    resize: none;
   }
 
   /********************************
@@ -294,6 +305,17 @@
     -webkit-transform: scale(1,1.1); /* Safari */
     transform: scale(1,1.1);
     background-color: #E6E6EC;
+    -webkit-transition: transform .2s ease-in;
+    #arrow {padding-left: 4vw;}
+  }
+  #categoryNAMES:active{
+    cursor:pointer;
+    // text-align: center;
+    padding-left: 1vw;
+    -ms-transform: scale(1,1.1); /* IE 9 */
+    -webkit-transform: scale(1,1.1); /* Safari */
+    transform: scale(1,1.1);
+    background-color: #9393B6;
     -webkit-transition: transform .2s ease-in;
     #arrow {padding-left: 4vw;}
   }

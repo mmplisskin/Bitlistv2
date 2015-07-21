@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'omniauth'
 
+gem 'kaminari'
+
 gem 'figaro'
 #allows auth via facebook
 gem 'omniauth-facebook'
@@ -40,6 +42,8 @@ gem 'clockwork', '~> 1.2.0'
 gem 'geocoder'
 
 gem 'bootstrap_form'
+
+gem 'jquery-infinite-pages'
 
 group :production do
   gem 'rails_12factor'
