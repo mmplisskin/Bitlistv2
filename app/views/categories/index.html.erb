@@ -5,7 +5,7 @@
     <div class="well" id="categoryNAMES" style="display:none;">
       <div class="row">
 
-          <div class="col-xs-10 col-sm-6 col-md-8 col-md-offset-1"><h1><%= category.name %></h1></div>
+          <div class="col-xs-10 col-sm-9 col-md-8 col-md-offset-1"><h1><%= category.name %></h1></div>
           <div class="col-xs-1 col-sm-2  col-md-2 col-md-offset-1" ><i class="fa fa-angle-double-right fa-4x" id="arrow"></i></div>
           <a href="/categories/<%=category.id%>"> </a>
       </div>
@@ -21,12 +21,12 @@ $(document).ready(function(){
 
       catName.slideDown(400)})
 
-      $('.well').each(function(){
-          var catName = $(this)
-          catname.click(function(){
-              catName.animate({width:'toggle'},350);
-          })
-        })
+      // $('.well').each(function(){
+      //     var catName = $(this)
+      //     catname.click(function(){
+      //         catName.animate({width:'toggle'},350);
+      //     })
+      //   })
 
 
 });
