@@ -31,8 +31,20 @@
 
 
   body.static_pages.about{
-    margin-top: 19vh;
+    margin-top: 13vh;
 
+  }
+
+  #checkBTN{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .panel.panel-body.about{
+    -moz-box-shadow:    inset 0 0 8px #000000;
+    -webkit-box-shadow: inset 0 0 8px #000000;
+    box-shadow:         inset 0 0 8px #000000;
+    padding: 1vh;
   }
 
 
