@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -6,9 +6,8 @@
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><i class="fa 4x fa-bitcoin"></i>itlist</a>
+      <a class="navbar-brand" href="/"><i class="fa 4x fa-bitcoin b"></i>itlist</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,6 +21,7 @@
           <% else %>
           <li><a href="/auth/facebook" data-toggle="modal" data-target="#myModal">Login</a></li>
           <% end %>
+
 <!-- <i class="fa fa-plus"></i> -->
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
@@ -40,19 +40,28 @@
 
 
 
-
       </form>
         <form class="navbar-form navbar-left" action="/items/new" >
           <button type="submit", class="btn btn-primary"><i class="fa fa-plus"></i> Post</button>
         </form>
 
 
+
+        <div class="nav navbar-nav navbar-left rate">
+          Average rate:
+
+          <br>
+          <i class="fa fa-dollar"></i>
+          <%= current_rate %>
+
+        </div>
+
         <div class="nav navbar-nav navbar-right">
           <% if current_user %>
           <li> <%= link_to '<i class="fa fa-sign-out"></i> Log Out'.html_safe, logout_path, method: :delete, class: 'btn btn-hidden'%></li>
           <% end %>
-        </div>
 
+        </div>
 
       <%= form_tag search_items_path, class:"navbar-form navbar-right", method: :get do |f| %>
       <div class="form-group">

@@ -30,7 +30,8 @@
 
 
 
-  .quotes{
+  body.static_pages.about{
+    margin-top: 19vh;
 
   }
 
@@ -46,12 +47,12 @@
     box-sizing: border-box;
   }
 
-body{
+  body{
     background-color: #FEFDFC;
-}
+  }
 
   .ui.container {
-    margin-top: 6vh;
+    margin-top: 8vh;
   }
 
 
@@ -87,6 +88,16 @@ body{
 
   .nav.navbar-nav.navbar-right {
     padding-right: 1vw;
+  }
+
+  .rate{
+    padding-left: 1vw;
+    color: #50ab50;
+    font-weight: 1vw;
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 13px;
+
   }
 
 

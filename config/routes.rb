@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resource :items
 
+  resources :rates
+
 
   resources :categories do
     resources :items
@@ -26,8 +28,9 @@ Rails.application.routes.draw do
 
    resources :items do
     collection do
-    get 'search'
+      get 'search'
+      end
     end
-  end
+
 
 end
