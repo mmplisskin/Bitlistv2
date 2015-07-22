@@ -43,7 +43,7 @@ gem 'geocoder'
 
 gem 'bootstrap_form'
 
-gem 'jquery-infinite-pages'
+gem 'bootstrap-kaminari-views'
 
 group :production do
   gem 'rails_12factor'

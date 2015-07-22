@@ -1,47 +1,120 @@
 <div class="panel panel-body">
   <div class="jumbotron">
     <h1><%= @category.name %></h1>
-    <%= link_to "Back to All Categories", categories_path %>
+    <form class="navbar-form navbar-left" action="/" >
+      <button type="submit", class="btn btn-info btn-large"><i class=" fa fa-chevron-left"></i> All Categories</button>
+    </form>
+
   </div>
 
   <% @items.each do |item| %>
-  <div class="well well-lg" id="categoryNAMES">
+  <div class="well well-md hover ACC" id="itemNAMES">
   <div class="row">
     <div class="col-xs-2 col-md-2 alignTOP">
-          <i class="fa fa-angle-double-down fa-4x"></i>
+          <i class="fa fa-angle-double-down fa-4x" id="downARROW"></i>
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-5"><h3><%= item.name %></h3></div>
+    <div class="col-xs-4 col-sm-4 col-md-5 itemNAME"><h3><%= item.name %></h3></div>
     <div class="col-xs-6 col-md-3 alignTOP"><h4><i><%= item.city %></i>
     </h4></div>
       <% price = item.price %>
     <div class="col-xs-2 col-md-2 alignTOP"><h5><%= number_to_currency(price) %></h5></div>
 
   </div>
-  <div class="panel panel-body"style="display:none;">
+  <div class="panel" style="display:none" id="hidden">
   <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-4"><h3><%= item.description %></h3></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 content"><h5><%= item.description %></h5></div>
+      <%=time_ago_in_words(item.created_at)%>
+    <i class="fa fa-usd fa-3x"></i>
+    <i class="fa fa-btc fa-3x"></i>
+    <i class="fa fa-phone fa-3x"></i>
+  <i class="fa fa-info-circle fa-3x"> </i>
+  <%#= number_with_precision @dollar_amount=@rate*item.price, :precision => 2 %>
+  <%# if item.image? %>
+    <%#= image_tag item.image.url(:large) %>
+    <%# end %>
   </div>
 </div>
-  <!-- <a href="/categories/<%=item.category_id%>/items/<%=item.id%>"> </a> -->
+
 </div>
-      <%#= link_to item.name, category_item_path(@category.id, item.id) %>
-
-
-
-
-
-
-
-
 
   <% end %>
-  <%= paginate @items %>
+  <div class="col-xs-4 col-md-12">
+  <%= paginate @items, :theme => 'twitter-bootstrap-3' %>
+</div>
 </div>
 
 
+<script>
+$('.ACC').each(function(){
+    var itemName = $(this)
 
-<!--
-<h3><%#= item.city %></h3>
-  <%# price = item.price   %>
-<h4> <%#= number_to_currency(price) %></h4> -->
-<!-- <div class="col-xs-6 col-md-6 col-xs-offset-1 col-md-offset-1"></div> -->
+      itemName.click(function(e){
+
+        if ($(this).find("#hidden").is(':hidden')){
+          console.log("div hidden")
+          $(this).removeClass("hoverClOSED")
+          $(this).addClass("hoverOPEN")
+          // $(this).find("#hidden").show(300);
+          $(this).find("#hidden").css({
+              "opacity":".5",
+              "display":"block",
+          }).show(400).animate({opacity:1})
+
+          $(this).find("#downARROW").removeClass("fa-angle-double-down ").addClass("fa-angle-double-up")
+            e.stopPropagation();
+        }
+        else{
+          $(this).find("#hidden").css({
+              "opacity":"0",
+              "display":"block",
+          }).hide(400).animate({opacity:1})
+          $(this).removeClass("hoverOPEN")
+          $(this).find("#downARROW").addClass("fa-angle-double-down ").removeClass("fa-angle-double-up")
+            e.stopPropagation();
+
+        }
+
+      })
+
+  })
+
+
+
+// $(document).ready(function(){
+// $("button").click(function(){
+// $("div").animate({
+// left: '250px',
+// height: '+=150px',
+// width: '+=150px'
+// });
+// });
+// });
+
+
+  // if($(this).is(':visible')) {
+  //   $(this).find("#hidden").hide(400);
+  // }
+
+
+  // $('.well').each(function(){
+  //   var itemName = $(this)
+  //   if ($(this).is(":hover")){
+  //     console.log("fuck")
+  //   }
+  // })
+</script>
+
+
+
+
+<%# if current_user != nil && current_user.id == item.user_id %>
+
+  <%#= link_to 'Edit', edit_category_item_path %>
+  <%#= link_to 'Delete', edit_category_item_path %>
+  <%#= link_to 'Delete', item_path,
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %></td>
+  </td>
+
+
+  <%# end  %>
