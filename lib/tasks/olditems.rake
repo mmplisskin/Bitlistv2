@@ -3,8 +3,8 @@ namespace :clear do
   task :olditems => :environment do
     puts "######### preparing to delete old items ################"
 
-     items = Item.where("created_at < ?", 30.days.ago)
+     items = Item.where("created_at < ?", 24.days.ago)
      items.destroy_all
   end
-  puts "Items have been destroyed"
+    puts "Items have been destroyed"
 end

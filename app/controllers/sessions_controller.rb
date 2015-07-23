@@ -9,10 +9,7 @@ class SessionsController < ApplicationController
  		if @user.save
 			if @user.created_at > 1.minute.ago
 			 	UserMailer.delay.welcome(@user.id)
-			# UserMailer.welcome_email(@ouser.id).deliver
-      #
-      #
-      #
+
 			end
 		end
       redirect_to user_path(@user.id)
@@ -20,6 +17,6 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session.delete(:user_id)
-		redirect_to login_path
+		redirect_to root_path
 	end
 end

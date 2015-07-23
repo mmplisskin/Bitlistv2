@@ -1,11 +1,8 @@
 /*
-
-
 *= require_self
 *= require rails_bootstrap_forms
 *= require social-share-button
  */
-
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
@@ -40,14 +37,10 @@
     background-attachment: scroll;
     background-repeat: no-repeat;
     opacity:.9
-
-
   }
-
 
   .static_pages:before {
     content: ' ';
-
     position: absolute;
     left: 0;
     top: 0;
@@ -65,7 +58,6 @@
     background-size: cover;
   }
 
-
   #checkBTN{
     margin-top: 2vh;
     margin-bottom: 1vh;
@@ -73,16 +65,14 @@
 
   #checkBTN:hover{
     -webkit-transform: scale(1.1,1.1);
-}
+  }
   .panel.panel-body.about{
     -moz-box-shadow:    inset 0 0 8px #000000;
     -webkit-box-shadow: inset 0 0 8px #000000;
     box-shadow:         inset 0 0 8px #000000;
     background-color: #2D2D2D;
     opacity: .9;
-    // padding: 1vh;
   }
-
 
   /********************************
             app.html
@@ -112,11 +102,11 @@
   .modal-dialog {
     padding-top: 28vh;
   }
+
   .modal-body{
       padding-top: 4vh;
       text-align: center;
   }
-
 
   #googleBTN {
     margin-bottom: 2vh;
@@ -128,9 +118,7 @@
 
   button.btn.btn-primary:hover {
     -webkit-transform: scale(1.1,1.1);
-
   }
-
 
   .navbar-brand {
     margin-top: -0.85em;
@@ -148,15 +136,10 @@
     margin-top: 0.5em;
     text-align: center;
     font-size: 13px;
-
   }
 
   textarea{
     resize: none;
-  }
-
-  .navbar-nav{
-
   }
 
   /********************************
@@ -164,13 +147,12 @@
   ********************************/
 
 
-    #pay-with-btc {
+  #pay-with-btc {
     position:relative;
     font-family: 'Ubuntu', sans-serif;
     // width: 12vw;
     width: 227px;
     margin-top: -1vh;
-
   }
 
   #pay-with-btc a {
@@ -181,17 +163,15 @@
     box-shadow: 0px -12px 35px -2px rgba(0,0,0,0.75);
   }
 
-
   #logo {
     position:relative;
     line-height:44px;
   }
+
   .logo-text{
     background-image: -webkit-linear-gradient(#F0E68C, #209);
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    // position:relative;
   }
 
   #coin {
@@ -241,14 +221,6 @@
   }
 
 
-  // .alert.alert-success.alert-dismissable{
-  //   width: 80vw;
-  //   height: 5vh;
-  //
-  // }
-
-
-
   /********************************
             Category index
   ********************************/
@@ -270,7 +242,6 @@
   }
 
   #categoryNAMES{
-
     position:relative;
   }
   #categoryNAMES:hover{
@@ -287,7 +258,6 @@
   }
   #categoryNAMES:active{
     cursor:pointer;
-    // text-align: center;
     padding-left: 1vw;
     -ms-transform: scale(1,1.1); /* IE 9 */
     -webkit-transform: scale(1,1.1); /* Safari */
@@ -317,49 +287,32 @@
     background-color: #2D2D2D;
     opacity: .9;
 
-
-
   }
-
-
-
 
   .index:after{
     width: 100%;
     height: 100%;
     content : "";
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-attachment: scroll;
-
     background-image: url("https://blackspike.com/site/wp-content/uploads/2014/03/bitcoinLogoWallpaper.png");
     width: 100%;
-        // height: 100%;
-        opacity : 0.2;
-        z-index: -1;
-        background-repeat: repeat-y;
-        -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-
-
-
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-attachment: scroll;
+    opacity : 0.2;
+    z-index: -1;
+    background-repeat: repeat-y;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
-
-
-
-
 
   .well{
     margin-bottom: 5px !important;
   }
 
-  .well:hover{
-
-  }
   .well h1{
     background-image: -webkit-linear-gradient(#337ab7, #209);
    -webkit-background-clip: text;
@@ -367,18 +320,14 @@
    z-index: 1;
   }
 
-
   /********************************
             Category SHOW
   ********************************/
-
 
   body.categories.show{
     overflow-y: scroll;
     overflow: -moz-scrollbars-vertical;
   }
-
-
 
   .content{
     padding-left: 2vw;
@@ -391,9 +340,6 @@
   button.btn.btn-info.btn-large {
     // margin-left: -1vw;
   }
-
-
-
 
   .hover:hover{
     cursor:pointer;
@@ -410,16 +356,13 @@
     -webkit-transition: transform .1s;
     // cursor:pointer;
     background-color: #F5F5F5;
-
   }
 
   .hoverOPEN{
-
     -webkit-transition: transform .1s;
     .fa-angle-double-up{
       position: relative;
       bottom: 1vh;
-
     }
     .itemNAME{
       top: 3vh;
@@ -427,29 +370,23 @@
 
   }
 
-    #itemNAME {
-      position: relative;
-      bottom: 1vh;
-    }
+  #itemNAME {
+    position: relative;
+    bottom: 1vh;
+  }
 
-    #itemNAMES:hover{
-
-      background-color: #E6E6EC;
-      -webkit-transition: transform .4s ease-out;
-      margin-bottom: 6px !important;
-      margin-top: 6px !important;
-
-
-    }
+  #itemNAMES:hover{
+    background-color: #E6E6EC;
+    -webkit-transition: transform .4s ease-out;
+    margin-bottom: 6px !important;
+    margin-top: 6px !important;
+  }
 
   .editLINK{
     position: fixed;
   }
 
-
-
   .hover:active{
-
     background-color: #d6dfdd;
     -webkit-transition: transform .1s;
   .fa-angle-double-down {
@@ -457,6 +394,7 @@
       top: 3vh;
     }
   }
+
   #hidden {
     box-shadow: inset 0px 0px 10px 0px #ABABAB,5px 5px 5px 1px #DDDDDD;
     -webkit-box-shadow: inset 0px 0px 10px 0px #ABABAB,5px 5px 5px 1px #DDDDDD;
@@ -464,47 +402,34 @@
     -o-box-shadow: inset 0px 0px 10px 0px #ABABAB,5px 5px 5px 1px #DDDDDD;
   }
 
+  .social-share-button{
+    display: none;
 
+  }
 
+  #quotes, #quotesUSER{
+    margin-top: 2vh;
+    background-image: -webkit-linear-gradient(#337ab7, #209);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   z-index: 1;
+   padding-bottom:  2vh;
 
-
-.social-share-button{
-  display: none;
-
-}
-
-.item_image{
-
-}
-
-#quotes, #quotesUSER{
-  // text-decoration: overline;
-
-  // width: 50vw;
-  // height: 6vh;
-  margin-top: 2vh;
-  background-image: -webkit-linear-gradient(#337ab7, #209);
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
- z-index: 1;
- padding-bottom:  2vh;
-
-}
+  }
 
 //
 // media query when small
 //
 // padding-bottom: 6vh;
 
+  button.btn.btn-info.btn-large {
+      position: relative;
+      top: 2vh;
+  }
 
-button.btn.btn-info.btn-large {
-    position: relative;
-    top: 2vh;
-}
-
-.btn-warning{
-  z-index: 1;
-}
+  .btn-warning{
+    z-index: 1;
+  }
 
 
 /********************************
@@ -539,17 +464,17 @@ button.btn.btn-info.btn-large {
   /********************************
             Search
   ********************************/
-    .search{
-      height: 100vh;
-      background: rgba(183,204,235,1);
-      background: -moz-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
-      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(183,204,235,1)), color-stop(22%, rgba(142,164,171,0.93)), color-stop(51%, rgba(29,163,204,0.83)), color-stop(100%, rgba(183,188,235,0.67)));
-      background: -webkit-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
-      background: -o-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
-      background: -ms-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
-      background: linear-gradient(to bottom, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7cceb', endColorstr='#b7bceb', GradientType=0 );
-    }
+  .search{
+    height: 100vh;
+    background: rgba(183,204,235,1);
+    background: -moz-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(183,204,235,1)), color-stop(22%, rgba(142,164,171,0.93)), color-stop(51%, rgba(29,163,204,0.83)), color-stop(100%, rgba(183,188,235,0.67)));
+    background: -webkit-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+    background: -o-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+    background: -ms-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+    background: linear-gradient(to bottom, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7cceb', endColorstr='#b7bceb', GradientType=0 );
+  }
 
 
 /********************************
