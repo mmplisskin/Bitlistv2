@@ -27,6 +27,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    items = @user.items.all
+    @items = items.page(params[:page]).per(10)
     respond_to do |format|
     format.html {
         render

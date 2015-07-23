@@ -45,6 +45,10 @@ gem 'bootstrap_form'
 
 gem 'bootstrap-kaminari-views'
 
+gem 'social-share-button'
+
+gem 'paperclip'
+
 group :production do
   gem 'rails_12factor'
 end

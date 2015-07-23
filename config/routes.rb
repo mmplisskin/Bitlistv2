@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resource :items
+  resources :items
 
   resources :rates
 

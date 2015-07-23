@@ -17,14 +17,14 @@ categories = Category.create([{ name: 'Art' }, { name: 'Cars' }, { name: 'Books'
   ])
 
 
-users=User.create([{name: "Maxwell",
-    email: "mmplisskin@gmail.com",
-
-    admin: true}])
-
-    rate = Rate.create([
-      {average_rate:0}
-      ])
+# users=User.create([{name: "Maxwell",
+#     email: "mmplisskin@gmail.com",
+#
+#     admin: true}])
+#
+#     rate = Rate.create([
+#       {average_rate:0}
+#       ])
 
 
 #
