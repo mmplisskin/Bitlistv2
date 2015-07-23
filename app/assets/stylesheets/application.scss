@@ -37,13 +37,10 @@
   body.static_pages.about{
     margin-top: 9vh;
     background-image: url("https://blackspike.com/site/wp-content/uploads/2014/03/bitcoinLogoWallpaper.png");
+    background-attachment: scroll;
     background-repeat: no-repeat;
-    -ms-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
     opacity:.9
+
 
   }
 
@@ -244,6 +241,13 @@
   }
 
 
+  // .alert.alert-success.alert-dismissable{
+  //   width: 80vw;
+  //   height: 5vh;
+  //
+  // }
+
+
 
   /********************************
             Category index
@@ -254,7 +258,7 @@
 
   }
 
-  .categories{
+  .categories,{
     background: rgba(183,204,235,1);
     background: -moz-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(183,204,235,1)), color-stop(22%, rgba(142,164,171,0.93)), color-stop(51%, rgba(29,163,204,0.83)), color-stop(100%, rgba(183,188,235,0.67)));
@@ -453,7 +457,7 @@
       top: 3vh;
     }
   }
-  #hidden{
+  #hidden {
     box-shadow: inset 0px 0px 10px 0px #ABABAB,5px 5px 5px 1px #DDDDDD;
     -webkit-box-shadow: inset 0px 0px 10px 0px #ABABAB,5px 5px 5px 1px #DDDDDD;
     -moz-box-shadow: inset 0px 0px 10px 0px #ABABAB,5px 5px 5px 1px #DDDDDD;
@@ -498,13 +502,54 @@ button.btn.btn-info.btn-large {
     top: 2vh;
 }
 
+.btn-warning{
+  z-index: 1;
+}
+
 
 /********************************
         USER PAGE
 ********************************/
+.users.show{
+  background: rgba(183,204,235,1);
+  background: -moz-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(183,204,235,1)), color-stop(22%, rgba(142,164,171,0.93)), color-stop(51%, rgba(29,163,204,0.83)), color-stop(100%, rgba(183,188,235,0.67)));
+  background: -webkit-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+  background: -o-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+  background: -ms-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+  background: linear-gradient(to bottom, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7cceb', endColorstr='#b7bceb', GradientType=0 );
+
+
+}
+
+/********************************
+      Items Form
+********************************/
+  .items.new{
+    padding-top: 4vh;
+  }
+
+  #postITEMBTN{
+    margin-top: 2vh;
+  }
 
 
 
+  /********************************
+            Search
+  ********************************/
+    .search{
+      height: 100vh;
+      background: rgba(183,204,235,1);
+      background: -moz-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(183,204,235,1)), color-stop(22%, rgba(142,164,171,0.93)), color-stop(51%, rgba(29,163,204,0.83)), color-stop(100%, rgba(183,188,235,0.67)));
+      background: -webkit-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+      background: -o-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+      background: -ms-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+      background: linear-gradient(to bottom, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7cceb', endColorstr='#b7bceb', GradientType=0 );
+    }
 
 
 /********************************

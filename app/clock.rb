@@ -12,4 +12,15 @@ module Clockwork
     `rake get:rate`
   }
 
+
+  every(10.seconds, 'rake clear olditems'){
+      `rake clear:olditems`
+  }
+
+  #
+  # every(1.day, 'rake clear olditems', :at => ['12:00', '18:00']){
+  #     `rake clear:olditems`
+  # }
+
+
 end

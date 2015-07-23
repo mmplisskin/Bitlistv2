@@ -27,10 +27,15 @@ $( document ).ready(function(){
 
 
 var quotes = [
-    'Genius is one percent inspiration, ninety-nine percent perspiration. (Thomas Edison)',
-    'The real problem is not whether machines think but whether men do. (B.F. Skinner)',
-    'There are only two hard things in Computer Science: cache invalidation and naming things. (Phil Karlton)',
-    'If today were the last day of your life, would you want to do what you are about to do today? (Steve Jobs)'];
+    'We have elected to put our money and faith in a mathematical framework that is free of politics and human error. - TYLER WINKLEVOSS',
+    'I think [bitcoin]’s a technical tour de force. - BILL GATES',
+    'I think there is a 20% chance that Bitcoin will become a huge, worldwide success. - PETER THIEL',
+    'I’ts gold for nerds. - STEPHEN COLBERT',
+    'It will be everywhere and the world will have to readjust. World governments will have to readjust. - JOHN MCAFEE',
+    'Bitcoin actually has the balance and incentives right, and that is why it is starting to take off. - JULIAN ASSANGE',
+    'I understand the political ramifications of [bitcoin] and I think that government should stay out of them and they should be perfectly legal. - RON PAUL',
+    'Bitcoin is the beginning of something great: a currency without a government, something necessary and imperative. - NASSIM TALEB',
+    'Economists and journalists often get caught up in this question: Why does Bitcoin have value? And the answer is very easy. Because it it useful and scarce. - ERIC VOORHEES'];
 var currentQuote = 0;
 
 function nextQuote(showImmediately) {

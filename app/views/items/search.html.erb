@@ -1,14 +1,9 @@
 
-<%if @items !=nil%>
-    <%@items.each do |item|%>
+<%if @items && @items.length > 1%>
 
-    <ul>
-      <h2>
-        <p><hr><%=link_to item.name, item_path(item.id)%></p></br>
-      </h2>
-    </ul>
-    <%end%>
-<%else flash.now.notice = " :( Sorry nothing matches your search criteria.. Please try again. " %>
+  <%= render '/layouts/items' %>
 
-  <%end%>
+<%else flash.notice = " :( Sorry nothing matches your search criteria.. Please try again. "%>
+
+<%end%>
   <%=link_to "All categories", root_path%>

@@ -49,6 +49,10 @@ gem 'social-share-button'
 
 gem 'paperclip'
 
+gem 'sinatra', :require => nil
+
+gem 'sidekiq'
+
 group :production do
   gem 'rails_12factor'
 end
@@ -62,6 +66,9 @@ end
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
+  gem "letter_opener"
+
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'

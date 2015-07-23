@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only:[:show, :edit, :update, :destroy]
+  before_action :find_item, only:[:show, :edit, :update, :destroy,]
   before_action :authorized?, only:[:new, :edit, :destroy, :update]
 
   def index
@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
     @item.user_id = current_user.id
     if @item.save
       flash[:notice] = "#{@item.name} was successfully listed!."
-        redirect_to category_items_path(@item.category_id, @item)
+        redirect_to category_item_path(@item.category_id, @item)
     else
       flash.now[:error] = @item.errors.full_messages
       render :new
@@ -41,12 +41,22 @@ class ItemsController < ApplicationController
 
   def destroy
       @item.destroy
-      redirect_to root_path
+      flash[:notice] = "Item was removed!"
+      redirect_to user_path(@item.user_id)
   end
 
 
+
   def search
-    @items = Item.search(params)
+      @items = Item.search(params)
+    if @items == nil
+      flash[:notice] = " Sorry nothing matches your search criteria.. Please try again. "
+    return
+
+    elsif @items && @items.length > 1
+        @items = @items.page(params[:page]).per(10)
+    end
+
   end
 
 
