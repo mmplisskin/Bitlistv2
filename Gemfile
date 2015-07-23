@@ -43,7 +43,11 @@ gem 'geocoder'
 
 gem 'bootstrap_form'
 
-gem 'jquery-infinite-pages'
+gem 'bootstrap-kaminari-views'
+
+gem 'social-share-button'
+
+gem 'paperclip'
 
 group :production do
   gem 'rails_12factor'

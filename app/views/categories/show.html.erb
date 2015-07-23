@@ -1,47 +1,117 @@
+
+
+
+
 <div class="panel panel-body">
-  <div class="jumbotron">
-    <h1><%= @category.name %></h1>
-    <%= link_to "Back to All Categories", categories_path %>
-  </div>
 
-  <% @items.each do |item| %>
-  <div class="well well-lg" id="categoryNAMES">
-  <div class="row">
-    <div class="col-xs-2 col-md-2 alignTOP">
-          <i class="fa fa-angle-double-down fa-4x"></i>
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <h1><%= @category.name %></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <h4><div class="test" id="quotes">/</div></h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+        <form action="/" >
+          <button type="submit", class="btn btn-info btn-large"><i class=" fa fa-chevron-left"></i> All Categories</button>
+        </form>
+      </div>
+      </div>
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-5"><h3><%= item.name %></h3></div>
-    <div class="col-xs-6 col-md-3 alignTOP"><h4><i><%= item.city %></i>
-    </h4></div>
-      <% price = item.price %>
-    <div class="col-xs-2 col-md-2 alignTOP"><h5><%= number_to_currency(price) %></h5></div>
 
-  </div>
-  <div class="panel panel-body"style="display:none;">
-  <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-4"><h3><%= item.description %></h3></div>
-  </div>
 </div>
-  <!-- <a href="/categories/<%=item.category_id%>/items/<%=item.id%>"> </a> -->
-</div>
-      <%#= link_to item.name, category_item_path(@category.id, item.id) %>
-
-
-
-
-
-
-
-
-
-  <% end %>
-  <%= paginate @items %>
+  <%= render '/layouts/items' %>
 </div>
 
 
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.js"></script>
 
-<!--
-<h3><%#= item.city %></h3>
-  <%# price = item.price   %>
-<h4> <%#= number_to_currency(price) %></h4> -->
-<!-- <div class="col-xs-6 col-md-6 col-xs-offset-1 col-md-offset-1"></div> -->
+<script>
+
+
+// $('.ACC').each(function(){
+//
+//     var itemName = $(this)
+//
+//       itemName.click(function(e){
+//
+//         if ($(this).find("#hidden").is(':hidden')){
+//           console.log("div hidden")
+//           $(this).removeClass("hoverClOSED")
+//           $(this).addClass("hoverOPEN")
+//           // $(this).find("#hidden").show(300);
+//           $(this).find(".social-share-button").show(400)
+//           $(this).find("#hidden").css({
+//               "opacity":".5",
+//               "display":"block",
+//           }).show(400).animate({opacity:1})
+//
+//           jQuery("html, body").animate({ scrollTop: $(this).offset().top - $(".navbar-collapse").height()}, 1000);
+//
+//
+//           $(this).find("#downARROW").removeClass("fa-angle-double-down ").addClass("fa-angle-double-up")
+//             e.stopPropagation();
+//         }
+//
+//
+//         else{
+//           $(this).find("#hidden").css({
+//               "opacity":"0",
+//               "display":"block",
+//           }).hide(600).animate({opacity:1})
+//           $(this).removeClass("hoverOPEN")
+//           $(this).find(".social-share-button").hide(100)
+//           $(this).find("#downARROW").addClass("fa-angle-double-down ").removeClass("fa-angle-double-up")
+//             e.stopPropagation();
+//         }
+//
+//
+//       })
+//
+//   })
+
+
+
+// $(document).ready(function(){
+// $("button").click(function(){
+// $("div").animate({
+// left: '250px',
+// height: '+=150px',
+// width: '+=150px'
+// });
+// });
+// });
+
+
+  // if($(this).is(':visible')) {
+  //   $(this).find("#hidden").hide(400);
+  // }
+
+
+  // $('.well').each(function(){
+  //   var itemName = $(this)
+  //   if ($(this).is(":hover")){
+  //     console.log("fuck")
+  //   }
+  // })
+</script>
+
+
+
+
+<%# if current_user != nil && current_user.id == item.user_id %>
+
+  <%#= link_to 'Edit', edit_category_item_path %>
+  <%#= link_to 'Delete', edit_category_item_path %>
+  <%#= link_to 'Delete', item_path,
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %></td>
+  </td>
+
+
+  <%# end  %>

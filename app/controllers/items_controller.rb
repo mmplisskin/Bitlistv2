@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :find_item, only:[:show, :edit, :update, :destroy]
+  before_action :authorized?, only:[:new, :edit, :destroy, :update]
 
   def index
     @items = Item.all
@@ -19,16 +21,17 @@ class ItemsController < ApplicationController
       flash.now[:error] = @item.errors.full_messages
       render :new
     end
-
   end
+
+
+
 
 
   def show
-    @item  = Item.find(params[:id])
+
   end
 
   def update
-    @item=Item.find(params[:id])
     if @item.update_attributes(item_params)
       redirect_to category_item_path(@item.category_id, @item.id)
     else
@@ -37,7 +40,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-      @item=Item.find(params[:id])
       @item.destroy
       redirect_to root_path
   end
@@ -50,7 +52,11 @@ class ItemsController < ApplicationController
 
 private
   def item_params
-    params.require(:item).permit(:name, :city, :state, :zipcode, :price, :description, :category_id, :phone_number, :user_id)
-
+    params.require(:item).permit(:name, :city, :state, :zipcode, :price, :description, :category_id, :phone_number, :image, :user_id)
   end
+
+  def find_item
+    @item = Item.find(params[:id])
+  end
+
 end
