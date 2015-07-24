@@ -3,7 +3,7 @@
   <div class="well well-md hover ACC fly" id="itemNAMES">
   <div class="row">
     <div class="col-xs-4 col-sm-5 col-md-4" id="itemNAME"><h3><%= item.name %></h3>
-      <% if current_user && current_user.id  == item.user_id %>
+      <% if current_user && current_user.id  == item.user_id || current_user.admin %>
         <%= link_to "Edit", edit_item_path(item), class:"editLINk" %>
 
         <%#= link_to '<i class="fa fa-trash-o"></i> Delete Item'.html_safe, item_path(item.id), :method => 'delete', class: 'btn btn-warning' %>
