@@ -20,7 +20,9 @@ categories = Category.create([{ name: 'Art' }, { name: 'Cars' }, { name: 'Books'
 users=User.create([{name: "ΜΔχ Πλισσκιν",
     email: "mmplisskin@gmail.com",
     admin: true,
-    provider: "facebook"
+    provider: "facebook",
+    uid: "10205188007553381",
+    image_url: "http://graph.facebook.com/10205188007553381/picture"
 
     }])
 
