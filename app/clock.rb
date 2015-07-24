@@ -8,12 +8,12 @@ module Clockwork
   end
 
 
-  every(10.seconds, 'rake get rate'){
+  every(2.seconds, 'rake get rate'){
     `rake get:rate`
   }
 
 
-  every(10.seconds, 'rake clear olditems'){
+  every(10.hours, 'rake clear olditems'){
       `rake clear:olditems`
   }
 
