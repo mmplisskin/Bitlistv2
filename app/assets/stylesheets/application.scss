@@ -77,6 +77,49 @@
   /********************************
             app.html
   ********************************/
+
+
+  //nav need media query
+
+
+
+
+
+
+  @media(max-width:920px){
+
+  .navbar-form.navbar-right {
+      padding-right: 36vw;
+      position: relative;
+    }
+
+  #categoryPANEL{
+        padding-top: 48px;
+
+  }
+
+}
+
+
+
+
+
+
+
+
+  @media(max-width:1200px){
+    input#search, input#location {
+      width: 12vw;
+    }
+  }
+
+  @media(max-width:992px){
+    input#search, input#location {
+      width: 14vw;
+    }
+  }
+
+
   *, *:before, *:after {
     box-sizing: inherit;
   }
