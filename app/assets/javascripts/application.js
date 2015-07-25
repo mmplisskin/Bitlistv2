@@ -33,7 +33,7 @@ var quotes = [
     'I’ts gold for nerds. - STEPHEN COLBERT',
     'It will be everywhere and the world will have to readjust. World governments will have to readjust. - JOHN MCAFEE',
     'Bitcoin actually has the balance and incentives right, and that is why it is starting to take off. - JULIAN ASSANGE',
-    'I understand the political ramifications of [bitcoin] and I think that government should stay out of them and they should be perfectly legal. - RON PAUL',
+    'I understand the political ramifications and I think that government should stay out of ["Bitcoin"] and they should be perfectly legal. - RON PAUL',
     'Bitcoin is the beginning of something great: a currency without a government, something necessary and imperative. - NASSIM TALEB',
     'Economists and journalists often get caught up in this question: Why does Bitcoin have value? And the answer is very easy. Because it it useful and scarce. - ERIC VOORHEES'];
 var currentQuote = 0;
