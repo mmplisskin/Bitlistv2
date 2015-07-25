@@ -51,14 +51,31 @@
           </div>
         </div>
 
+        <div class="locationLAT"style="display:none;">
+          <%= item.latitude %>
+        </div>
+        <div class="locationLON" style="display:none;">
+          <%= item.longitude %>
+        </div>
         <% if item.image_file_name %>
           <div class="item_image">
             <a class="example-image-link" href="<%=item.image.url(:large)%>" data-lightbox="example-1"><img class="example-image" src="<%=item.image.url(:med)%>" alt="image-1" /></a>
           </div>
         <% end %>
+
+
+        <!-- </div> -->
     </div>
+
+  </div>
+  <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+  <div id="googleMap" class="map" style="width:69.7vw; height:34vh;
+  "></div>
   </div>
 </div>
+</div>
+
   <%= social_share_button_tag(item.name, :popup => "true", :url => "bitlist.org", :popup => "true") %>
 
 

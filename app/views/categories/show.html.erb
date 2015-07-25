@@ -28,10 +28,52 @@
   <%= render '/layouts/items' %>
 </div>
 
-
+   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.1/js/lightbox.js"></script>
 
 <script>
+
+
+// google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'page:load', initialize);
+//
+// function initialize() {
+//
+//   console.log("map going")
+//
+//   console.log(lat)
+//   console.log(long)
+//     var myCenter = new google.maps.LatLng(lat,long);
+//     var marker;
+//
+//     var mapProp = {
+//       center: myCenter,
+//       zoom:20,
+//       mapTypeId:google.maps.MapTypeId.HYBRID
+//     };
+//     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+    // var marker = new google.maps.Marker({
+    //   position:myCenter
+    // });
+
+    // marker.setMap(map);
+    //
+    // google.maps.event.addListener(marker,'click', function() {
+    //   map.setZoom(16);
+    //   map.setCenter(marker.getPosition());
+    // });
+
+    // var infowindow = new google.maps.InfoWindow({
+    //   content: my_content
+    // });
+    // infowindow.open(map,marker);
+
+  // })
+// }
+// google.maps.event.addDomListener(window, 'load', initialize);
+
+
 
 
 // $('.ACC').each(function(){
@@ -110,8 +152,6 @@
   <%#= link_to 'Delete', edit_category_item_path %>
   <%#= link_to 'Delete', item_path,
   method: :delete,
-  data: { confirm: 'Are you sure?' } %></td>
-  </td>
-
+  data: { confirm: 'Are you sure?' } %>
 
   <%# end  %>
