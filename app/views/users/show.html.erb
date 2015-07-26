@@ -21,4 +21,21 @@
     </div>
 
 </div>
-<%= render '/layouts/items' %>
+<% if @user.items.length == 0  %>
+<div class="panel panel-body">
+  <div class="well well-md hover ACC fly">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+    <h3>You haven't posted anything :( </h3>
+    </form>
+      <form action="/items/new" >
+        <button class="btn btn-primary"><i class="fa fa-plus"></i> Post</button>
+    </form>
+
+  </div>
+</div>
+</div>
+</div>
+<% else %>
+ <%= render '/layouts/items' %>
+<% end %>

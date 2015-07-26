@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
+  # has_many :reports 
   # before_create :default_name
 
   # validates(:name, presence: true)

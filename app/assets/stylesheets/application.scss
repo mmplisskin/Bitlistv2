@@ -194,7 +194,7 @@
       padding-left: 14%;
 
     }
-    button.btn.btn-primary {
+    .postITEMBTN {
     padding: 2vh;
     padding-right: 49%;
     padding-left: 49%;
@@ -664,12 +664,16 @@
       Items Form
 ********************************/
   .items.new{
-    padding-top: 4vh;
+    padding-top: 1vh;
   }
 
   #postITEMBTN{
     margin-top: 2vh;
   }
+
+  .form-group {
+  margin-bottom: 15px;
+}
 
 
 
