@@ -10,6 +10,9 @@
 
   <%= f.file_field :image %>
 
+
+  <%#= file_field_tag "images[]", type: :file, multiple: true %>
+
   <%= f.text_area :description,  cols: 40, rows: 4, placeholder: 'A brief description of your item'  %>
 
   <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: false %>

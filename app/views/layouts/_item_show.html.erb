@@ -1,7 +1,8 @@
 <div class="panel panel-body">
-  <div class="well well-md hover ACC fly" id="@itemNAMES">
+  <div class="well well-md hover ACC fly" id="itemNAMES">
   <div class="row">
-    <div class="col-xs-4 col-sm-5 col-md-4" id="@itemNAME"><h3><%= @item.name %></h3>
+
+    <div class="col-xs-4 col-sm-5 col-md-4" id="itemNAME"><h3><%= @item.name %></h3>
       <% if current_user && current_user.id  == @item.user_id || current_user && current_user.admin %>
       <div class="row">
         <div class="col-xs-5 col-sm-5 col-md-2">
@@ -48,19 +49,35 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
             <h4> <i class="fa fa-info-circle"></i> <%= @item.description %></h4>
           </div>
-        </div>
 
+
+        <div class="locationLAT"style="display:none;">
+          <%= @item.latitude %>
+        </div>
+        <div class="locationLON" style="display:none;">
+          <%= @item.longitude %>
+        </div>
         <% if @item.image_file_name %>
-          <div class="@item_image">
-            <a class="example-image-link" href="<%=@item.image.url(:large)%>" data-lightbox="example-1"><img class="example-image" src="<%=@item.image.url(:med)%>" alt="image-1" /></a>
+          <div class="item_image">
+            <a class="example-image-link" href="<%=item.image.url(:large)%>" data-lightbox="example-1"><img class="example-image" src="<%=item.image.url(:med)%>" alt="image-1" /></a>
           </div>
         <% end %>
+
+
+        <!-- </div> -->
     </div>
+
+
   </div>
+  <div class="mapContainer">
+    <div id="googleMap" class="map"style="width:100%; height:100%"></div>
+  </div>
+
+
 </div>
   <%= social_share_button_tag(@item.name, :popup => "true", :url => "http://bitlist.org/items", :popup => "true") %>
-</div>
 
+</div>
 
 
   <div class="col-xs-4 col-md-12">

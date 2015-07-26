@@ -36,7 +36,10 @@
     background-image: url("https://blackspike.com/site/wp-content/uploads/2014/03/bitcoinLogoWallpaper.png");
     background-attachment: scroll;
     background-repeat: no-repeat;
-    opacity:.9
+    opacity:.9;
+    // -webkit-backface-visibility: hidden;
+    // background-size:100% 100%;
+    background-repeat: repeat-y;
   }
 
   .static_pages:before {
@@ -45,7 +48,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 105em;
     z-index: -25;
     opacity: 0.6;
     background-color: black;
@@ -55,7 +58,7 @@
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
-    background-size: cover;
+    background-repeat: repeat-y;
   }
 
   #checkBTN{
@@ -77,7 +80,11 @@
   /********************************
             app.html
   ********************************/
-
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
 
   //nav need media query
 
@@ -86,27 +93,31 @@
 
 
 
-  @media(max-width:920px){
+//   @media(max-width:920px){
+//
+//   .navbar-form.navbar-right {
+//       padding-right: 36vw;
+//       position: relative;
+//     }
+//
+//   #categoryPANEL{
+//         padding-top: 48px;
+//
+//   }
+//
+// }
+//
 
-  .navbar-form.navbar-right {
-      padding-right: 36vw;
-      position: relative;
-    }
-
-  #categoryPANEL{
-        padding-top: 48px;
-
-  }
-
-}
 
 
-@media(max-width:865px){
 
-  input#search, input#location {
-    width: 80vw;
-  }
-}
+// @media(max-width:896px){
+//
+//   input#search, input#location {
+//     width: 80vw;
+//   }
+// }
+
 
 // .navbar-fixed-top {
 //     top: 8vh;
@@ -126,58 +137,79 @@
     width: 160px;
     padding-left: 0;
     }
+    // .mapContainer {
+    //   width: 45em;
+    //   height: 15em;
+    // }
+    // #googleMap{
+    //   width: 40vw;
+    //   height: 80vh;
+    //
+    // }
   }
 
-  @media(max-width:998px){
+  @media(max-width:970px){
     input#search, input#location {
-      width: 240px;
+      // width: 240px;
     }
   .navbar-right {
+
     margin-right: 31px;
   }
   form.navbar-form.navbar-left {
     padding-left: 20px;
-  }
-  }
-
-  @media(max-width:920px){
-    .navbar-form.navbar-right {
-     padding-right: 0 !important;
-
     }
-  }
 
+
+
+  }
   @media(max-width:768px){
-    #search, #location {
-      width: 571px;
-    }
 
     form.navbar-form.navbar-left {
-      padding-left: 20px;
+    padding-left: 0;
+  }
+    #search, #location {
+      width: 80%;
     }
+    input#search, input#location {
+      display: inline;
+      width: 100%;
+      margin: 1%;
+    }
+
 
     .navbar-form.navbar-right {
-    padding-left: 54px
+      margin: 0 auto;
+
     }
 
-    #location {
-    position: relative;
-    // left: 271px;
-    // bottom: 34px;
+    .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+      max-height: 60%;
     }
+
+
     button.btn.btn-default.mediabtn {
-      // margin-left: 574px;
-      // margin-top: -94px;
-      padding: 25px;
+      margin-left: 35%;
+      padding-right: 14%;
+      padding-left: 14%;
+
     }
-
+    button.btn.btn-primary {
+    padding: 2vh;
+    padding-right: 49%;
+    padding-left: 49%;
+  }
+  a.btn.btn-hidden {
+      padding-left: 9%;
   }
 
+}
 
 
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+
+  // *, *:before, *:after {
+  //   box-sizing: inherit;
+  // }
 
   h2, h3, h4, h5, h6 {
       font-weight: 200 !important;
@@ -337,6 +369,7 @@
     background: -ms-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
     background: linear-gradient(to bottom, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7cceb', endColorstr='#b7bceb', GradientType=0 );
+    // -webkit-backface-visibility: hidden;
   }
 
   #categoryNAMES{
@@ -345,14 +378,15 @@
   #categoryNAMES:hover{
     cursor:pointer;
     // text-align: center;
-    padding-left: 1vw;
+    // padding-left: 1vw;
     -ms-transform: scale(1,1.1); /* IE 9 */
     -webkit-transform: scale(1,1.1); /* Safari */
     transform: scale(1,1.1);
     background-color: #E6E6EC;
-    -webkit-transition: transform .4s ease-out;
-    #arrow {padding-left: 4vw;
-    -webkit-transition: transform 1s ease-out;}
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s;
+    transition: all .4s;
+      #arrow {padding-left: 4vw;}
   }
   #categoryNAMES:active{
     cursor:pointer;
@@ -361,7 +395,9 @@
     -webkit-transform: scale(1,1.1); /* Safari */
     transform: scale(1,1.1);
     background-color: #9393B6;
-    -webkit-transition: transform .4s ease-out;
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s;
+    transition: all .4s;
     #arrow {padding-left: 4vw;}
   }
 
@@ -422,17 +458,23 @@
             Category SHOW
   ********************************/
 
+
+
+
   body.categories.show{
     overflow-y: scroll;
     overflow: -moz-scrollbars-vertical;
+    // -webkit-backface-visibility: hidden;
   }
 
   .content{
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 1vh;
-    padding-bottom: 2vh;
-
+    // padding-left: 2vw;
+    padding-right: 2em;
+    // padding-top: 1vh;
+    // padding-bottom: 2vh;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em
   }
 
   button.btn.btn-info.btn-large {
@@ -442,19 +484,23 @@
   .hover:hover{
     cursor:pointer;
     background-color: #E6E6EC;
-    -webkit-transition: transform .1s;
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    transition: all .1s;
 
     .fa-angle-double-down {
       position: relative;
       top: 1vh;
     }
   }
-
-  .hoverOPEN:hover{
-    -webkit-transition: transform .1s;
-    // cursor:pointer;
-    background-color: #F5F5F5;
-  }
+  //
+  // .hoverOPEN:hover{
+  //   -webkit-transition: all .1s;
+  //   -moz-transition: all .1s;
+  //   transition: all .1s;
+  //   // cursor:pointer;
+  //   background-color: #F5F5F5;
+  // }
 
   .hoverOPEN{
     -webkit-transition: transform .1s;
@@ -475,9 +521,16 @@
 
   #itemNAMES:hover{
     background-color: #E6E6EC;
-    -webkit-transition: transform .4s ease-out;
-    margin-bottom: 6px !important;
-    margin-top: 6px !important;
+    // -webkit-transition: all .4s;
+    // -moz-transition: all .4s;
+    // transition: all .4s;
+    // -ms-transform: scale(1,1.1); /* IE 9 */
+    // -webkit-transform: scale(1,1.1); /* Safari */
+    // transform: scale(1,1.1);
+  //
+  // border-bottom: 1.2em !important;
+  //     border-top: 1.2em !important;
+    // margin-top: .2px !important;
   }
 
   .editLINK{
@@ -486,7 +539,9 @@
 
   .hover:active{
     background-color: #d6dfdd;
-    -webkit-transition: transform .1s;
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    transition: all .1s;
   .fa-angle-double-down {
       position: relative;
       top: 3vh;
@@ -505,28 +560,87 @@
 
   }
 
+.quotesParent{
+  // height: 10vh;
+  // width: 63vw;
+  // font-size: 90%;
+  display: block;
+  // margin-bottom: 2vh;
+
+}
+
   #quotes, #quotesUSER{
-    margin-top: 2vh;
+    display: block;
+    // margin-top: 2vh;
     background-image: -webkit-linear-gradient(#337ab7, #209);
+
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    z-index: 1;
    padding-bottom:  2vh;
+    // height: 6vh;
+    // width: 63vw;
 
   }
+
+  @media(max-width:768px){
+    h1.categoryHeading {
+      padding-bottom: 0vh;
+      margin-top: -3vh;
+    }
+    button.btn.btn-info.btn-large {
+        display: inline-block;
+        position: relative;
+        top: 2vh;
+        margin-top: 12vh;
+    }
+    .quotesParent{
+      width: 73vw;
+      height: 6vh;
+      font-size: 90%;
+      display: block;
+      margin-top: -2vh;
+      margin-bottom: 2vh;
+      // margin-left: -2vh;
+      text-align: center;
+
+    }
+    #quotes, #quotesUSER{
+      font-size: -8em;
+    }
+
+
+  }
+
+
+
 
 //
 // media query when small
 //
 // padding-bottom: 6vh;
 
-  button.btn.btn-info.btn-large {
-      position: relative;
-      top: 2vh;
-  }
+
 
   .btn-warning{
     z-index: 1;
+    // margin-left: 4vh;
+  }
+
+  .mapContainer {
+    // margin-left: 9%;
+    // width: 45em;
+    // height: 15em;
+    // padding: 3em;
+    // width: 59em;
+    height: 15em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em
+  }
+  #googleMap{
+    position: relative;
+    // overflow: !important visible;
   }
 
 

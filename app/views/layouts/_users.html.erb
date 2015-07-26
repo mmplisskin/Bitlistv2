@@ -1,0 +1,54 @@
+<div class="panel panel-body">
+  <% @users.each do |user| %>
+  <div class="well well-md ACC" id="itemNAMES">
+  <div class="row">
+    <div class="col-xs-4 col-sm-5 col-md-4" id="itemNAME"><h3><%= user.name %></h3>
+
+      <div class="row">
+        <div class="col-xs-5 col-sm-5 col-md-2">
+
+      </div>
+          <%= button_to('Remove User', user_path(user), :method => 'delete', :class => 'btn btn-xs btn-warning')  %>
+      </div>
+
+
+
+    </div>
+    <div class="col-xs-6 col-md-4 alignTOP"><h4>
+      <i><%= user.items.length %></i> Items
+      <h5><i><%= user.email%></i></h5>
+    </h4></div>
+
+    <div class="col-xs-5 col-md-3"><h5><%= user.uid %></h5></div>
+    <div class="col-xs-1 col-md-1">
+          <i class="fa fa-angle-double-down fa-4x" id="downARROW"></i>
+    </div>
+  </div>
+  <div class="panel" style="display:none" id="hidden">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 content">
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-12 col-md-4">
+            <h6> <i class="fa fa-clock-o"></i> Added <%= time_ago_in_words(user.created_at)%> ago</h6>
+          </div>
+        </div>
+        <% @items = user.items
+            @items = @items.page(params[:page]).per(10) %>
+          <%= render '/layouts/items' %>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <% end %>
+
+
+
+</div>
+<div class="col-xs-4 col-md-12">
+<%= paginate @users, :theme => 'twitter-bootstrap-3' %>
+</div>
