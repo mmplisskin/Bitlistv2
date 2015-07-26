@@ -43,10 +43,12 @@ class ItemsController < ApplicationController
   def destroy
       @item.destroy
       flash[:notice] = "Item was removed!"
-      unless current_user.admin
+      unless !current_user.admin
+        redirect_to "/users/admin"
+      else
         redirect_to user_path(@item.user_id)
       end
-      redirect_to "/users/admin"
+
   end
 
 

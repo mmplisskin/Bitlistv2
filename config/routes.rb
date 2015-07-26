@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get "users/admin" => 'users#admin'
 
+  get '/users/unsubscribe/:signature' => 'users#unsubscribe', as: 'unsubscribe'
 
   resources :users
 

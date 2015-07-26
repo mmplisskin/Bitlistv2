@@ -36,6 +36,15 @@ class UsersController < ApplicationController
         redirect_to admin_path
     end
 
+    def unsubscribe
+      if user = User.read_access_token(params[:signature])
+        user.update_attribute :email_opt_in, false
+        render text: "You have been unsubscribed"
+      else
+        render text: "Invalid Link"
+      end
+    end
+
   # def update
   #   @user = User.find(params[:id])
   #
@@ -59,7 +68,7 @@ class UsersController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit()
+    params.require(:user).permit(:email_opt_in)
   end
 
   def find_user

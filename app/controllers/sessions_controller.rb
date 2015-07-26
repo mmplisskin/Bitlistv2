@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
 	    session[:user_id] = @user.id
 
  		if @user.save
-			if @user.created_at > 1.minute.ago
+			# if @user.created_at > 1.minute.ago
 			 	UserMailer.delay.welcome(@user.id)
 
-			end
+			# end
 		end
       redirect_to user_path(@user.id)
 	end
