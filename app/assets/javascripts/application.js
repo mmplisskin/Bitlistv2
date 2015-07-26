@@ -113,11 +113,13 @@ setInterval(function() { nextQuote(false); }, 6000);
 
 
 $( document ).ready(function(){
+
 $('.ACC').each(function(){
 
     var itemName = $(this)
+    var map;
 
-      itemName.click(function(e){
+      itemName.click(function(e, map){
 
         if ($(this).find("#hidden").is(':hidden')){
           console.log("div hidden")
@@ -149,14 +151,17 @@ $('.ACC').each(function(){
 
           };
 
-           var map = new google.maps.Map(maps,mapProp);
+           map = new google.maps.Map(maps,mapProp);
           //  google.maps.event.addDomListener(window, 'load', initialize);
-           google.maps.event.addDomListener(window, "resize", function() {
-             console.log("resized")
-              var center = map.getCenter();
-              google.maps.event.trigger(map, "resize");
-              map.setCenter(center);
-           });
+          google.maps.event.addDomListener(window, "resize", function() {
+           var center = map.getCenter();
+           google.maps.event.trigger(map, "resize");
+           map.setCenter(center);
+          });
+
+           google.maps.event.addListener(map, 'bounds_changed', function() {
+               var bounds = map.getBounds();
+           })
 
 
            var marker = new google.maps.Marker({

@@ -137,11 +137,15 @@
     width: 160px;
     padding-left: 0;
     }
-    #googleMap{
-      width: 40vw;
-      height: 80vh;
-
-    }
+    // .mapContainer {
+    //   width: 45em;
+    //   height: 15em;
+    // }
+    // #googleMap{
+    //   width: 40vw;
+    //   height: 80vh;
+    //
+    // }
   }
 
   @media(max-width:970px){
@@ -621,9 +625,15 @@
   }
 
   .mapContainer {
-    width: 94vh;
-    height: 16vw;
-    overflow: !important visible;
+    // margin-left: 9%;
+    // width: 45em;
+    // height: 15em;
+    // padding: 3em;
+    // width: 59em;
+    height: 15em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em
   }
   #googleMap{
     position: relative;
