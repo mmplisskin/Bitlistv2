@@ -37,7 +37,7 @@
     background-attachment: scroll;
     background-repeat: no-repeat;
     opacity:.9;
-    -webkit-backface-visibility: hidden;
+    // -webkit-backface-visibility: hidden;
     // background-size:100% 100%;
     background-repeat: repeat-y;
   }
@@ -136,6 +136,11 @@
     .navbar-brand {
     width: 160px;
     padding-left: 0;
+    }
+    #googleMap{
+      width: 40vw;
+      height: 80vh;
+
     }
   }
 
@@ -360,7 +365,7 @@
     background: -ms-linear-gradient(top, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
     background: linear-gradient(to bottom, rgba(183,204,235,1) 0%, rgba(142,164,171,0.93) 22%, rgba(29,163,204,0.83) 51%, rgba(183,188,235,0.67) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7cceb', endColorstr='#b7bceb', GradientType=0 );
-    -webkit-backface-visibility: hidden;
+    // -webkit-backface-visibility: hidden;
   }
 
   #categoryNAMES{
@@ -369,14 +374,15 @@
   #categoryNAMES:hover{
     cursor:pointer;
     // text-align: center;
-    padding-left: 1vw;
+    // padding-left: 1vw;
     -ms-transform: scale(1,1.1); /* IE 9 */
     -webkit-transform: scale(1,1.1); /* Safari */
     transform: scale(1,1.1);
     background-color: #E6E6EC;
-    -webkit-transition: transform .4s ease-out;
-    #arrow {padding-left: 4vw;
-    -webkit-transition: transform 1s ease-out;}
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s;
+    transition: all .4s;
+      #arrow {padding-left: 4vw;}
   }
   #categoryNAMES:active{
     cursor:pointer;
@@ -385,7 +391,9 @@
     -webkit-transform: scale(1,1.1); /* Safari */
     transform: scale(1,1.1);
     background-color: #9393B6;
-    -webkit-transition: transform .4s ease-out;
+    -webkit-transition: all .4s ease-out;
+    -moz-transition: all .4s;
+    transition: all .4s;
     #arrow {padding-left: 4vw;}
   }
 
@@ -452,7 +460,7 @@
   body.categories.show{
     overflow-y: scroll;
     overflow: -moz-scrollbars-vertical;
-    -webkit-backface-visibility: hidden;
+    // -webkit-backface-visibility: hidden;
   }
 
   .content{
@@ -470,19 +478,23 @@
   .hover:hover{
     cursor:pointer;
     background-color: #E6E6EC;
-    -webkit-transition: transform .1s;
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    transition: all .1s;
 
     .fa-angle-double-down {
       position: relative;
       top: 1vh;
     }
   }
-
-  .hoverOPEN:hover{
-    -webkit-transition: transform .1s;
-    // cursor:pointer;
-    background-color: #F5F5F5;
-  }
+  //
+  // .hoverOPEN:hover{
+  //   -webkit-transition: all .1s;
+  //   -moz-transition: all .1s;
+  //   transition: all .1s;
+  //   // cursor:pointer;
+  //   background-color: #F5F5F5;
+  // }
 
   .hoverOPEN{
     -webkit-transition: transform .1s;
@@ -503,9 +515,16 @@
 
   #itemNAMES:hover{
     background-color: #E6E6EC;
-    -webkit-transition: transform .4s ease-out;
-    margin-bottom: 6px !important;
-    margin-top: 6px !important;
+    // -webkit-transition: all .4s;
+    // -moz-transition: all .4s;
+    // transition: all .4s;
+    // -ms-transform: scale(1,1.1); /* IE 9 */
+    // -webkit-transform: scale(1,1.1); /* Safari */
+    // transform: scale(1,1.1);
+  //
+  // border-bottom: 1.2em !important;
+  //     border-top: 1.2em !important;
+    // margin-top: .2px !important;
   }
 
   .editLINK{
@@ -514,7 +533,9 @@
 
   .hover:active{
     background-color: #d6dfdd;
-    -webkit-transition: transform .1s;
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    transition: all .1s;
   .fa-angle-double-down {
       position: relative;
       top: 3vh;
@@ -599,8 +620,14 @@
     z-index: 1;
   }
 
-  #googleMap {
-    margin-left: .7vw;
+  .mapContainer {
+    width: 94vh;
+    height: 16vw;
+    overflow: !important visible;
+  }
+  #googleMap{
+    position: relative;
+    // overflow: !important visible;
   }
 
 

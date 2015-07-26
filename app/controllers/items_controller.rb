@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  
+
   before_action :find_item, only:[:show, :edit, :update, :destroy,]
   before_action :authorized?, only:[:new, :edit, :destroy, :update]
 
@@ -43,7 +43,10 @@ class ItemsController < ApplicationController
   def destroy
       @item.destroy
       flash[:notice] = "Item was removed!"
-      redirect_to user_path(@item.user_id)
+      unless current_user.admin
+        redirect_to user_path(@item.user_id)
+      end
+      redirect_to "/users/admin"
   end
 
 

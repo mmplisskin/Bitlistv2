@@ -125,7 +125,7 @@ $('.ACC').each(function(){
           $(this).addClass("hoverOPEN")
           // $(this).find("#hidden").show(300);
           $(this).find(".social-share-button").show(400)
-          // $(this).find(".map").toggle(400)
+          $(this).find(".map").show()
           $(this).find("#hidden").css({
               "opacity":".5",
               "display":"block",
@@ -150,6 +150,14 @@ $('.ACC').each(function(){
           };
 
            var map = new google.maps.Map(maps,mapProp);
+          //  google.maps.event.addDomListener(window, 'load', initialize);
+           google.maps.event.addDomListener(window, "resize", function() {
+             console.log("resized")
+              var center = map.getCenter();
+              google.maps.event.trigger(map, "resize");
+              map.setCenter(center);
+           });
+
 
            var marker = new google.maps.Marker({
              position:myCenter
@@ -157,14 +165,14 @@ $('.ACC').each(function(){
           marker.setMap(map);
 
 
+
         }
 
         initialize(lat,long, maps);
 
-
-
-
-
+      //   setTimeout(function() {google.maps.event.trigger(maps, 'resize');
+      //   console.log("started")
+      // }, 1000);
 
 
 
@@ -173,7 +181,7 @@ $('.ACC').each(function(){
 
 
           $(this).find("#downARROW").removeClass("fa-angle-double-down ").addClass("fa-angle-double-up")
-          google.maps.event.trigger(map, 'resize');
+            google.maps.event.trigger(maps, 'resize')
             e.stopPropagation();
 
         }
