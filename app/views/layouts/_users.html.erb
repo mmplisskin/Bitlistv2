@@ -33,15 +33,18 @@
             <h6> <i class="fa fa-clock-o"></i> Added <%= time_ago_in_words(user.created_at)%> ago</h6>
           </div>
         </div>
-        <% @items = user.items
-            @items = @items.page(params[:page]).per(10) %>
-          <%= render '/layouts/items' %>
+
         </div>
 
-      </div>
-    </div>
+
+
 
   </div>
+  </div>
+  <% @items = user.items
+      @items = @items.page(params[:page]).per(10) %>
+    <%= render '/layouts/items' %>
+</div>
 
 
   <% end %>

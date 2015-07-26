@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :image_url
       t.string :url
       t.boolean :admin, :default => false
-      t.boolean :email_opt_in, :default => false
+      t.boolean :email_opt_in, :default => true
 
       t.timestamps null: false
     end

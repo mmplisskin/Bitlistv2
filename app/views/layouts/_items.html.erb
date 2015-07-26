@@ -13,13 +13,13 @@
       <% end %>
 
     </div>
-    <div class="col-xs-3 col-md-4 alignTOP"><h4>
+    <div class="col-xs-3 col-sm-3 col-md-4 alignTOP"><h4>
       <!-- <i><%= item.city %></i> -->
       <h5><i><%= item.city%></i>, <%= item.state %> <%= item.zipcode %></h5>
     </h4>
   </div>
       <% price = item.price %>
-    <div class="col-xs-3 col-md-3"><h5><%= number_to_currency(price) %></h5></div>
+    <div class="col-xs-3 col-sm-2 col-md-3"><h5><%= number_to_currency(price) %></h5></div>
     <div class="col-xs-1 col-md-1">
           <i class="fa fa-angle-double-down fa-4x" id="downARROW"></i>
     </div>
