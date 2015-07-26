@@ -59,9 +59,10 @@ ActiveRecord::Schema.define(version: 20150722151009) do
     t.string   "location"
     t.string   "image_url"
     t.string   "url"
-    t.boolean  "admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "admin",        default: false
+    t.boolean  "email_opt_in", default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_foreign_key "items", "categories"
