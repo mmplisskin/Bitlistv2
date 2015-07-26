@@ -468,11 +468,13 @@
   }
 
   .content{
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 1vh;
-    padding-bottom: 2vh;
-
+    // padding-left: 2vw;
+    padding-right: 2em;
+    // padding-top: 1vh;
+    // padding-bottom: 2vh;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em
   }
 
   button.btn.btn-info.btn-large {
