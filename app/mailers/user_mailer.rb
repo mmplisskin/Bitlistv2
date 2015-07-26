@@ -1,8 +1,8 @@
 class UserMailer < ApplicationMailer
 
-  before_action :generate_token
+  # before_action :generate_token
 
-  def welcome(user_id, token)
+  def welcome(user_id)
     @user = User.find(user_id)
     @email = @user.email
     @name = @user.name
@@ -10,8 +10,7 @@ class UserMailer < ApplicationMailer
     @subject = "Welcome! #{@user.name}"
     @greeting = "Thank you for joining the Bitlist community"
     @info = "Please be sure to follow our terms of service."
-    @token = User.access_token
-
+    @token = @user.access_token
 
     mail to: @email, subject: @subject
 
@@ -31,10 +30,11 @@ class UserMailer < ApplicationMailer
   end
 
 
-  def generate_token(user_id)
-    @user = User.find(user_id)
-    token = @user.acces_token
-  end
+  # def generate_token user_id
+  #   @user = User.find(user_id)
+  #   token = @user.access_token
+  #   to
+  # end
 
 
 end
