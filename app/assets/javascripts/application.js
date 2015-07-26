@@ -119,6 +119,26 @@ $('.ACC').each(function(){
     var itemName = $(this)
     var map;
 
+    $(document).mouseup(function (e)
+{
+    var container = itemName
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        
+        $(container).find("#hidden").css({
+            "opacity":"0",
+            "display":"block",
+        }).hide(600).animate({opacity:1})
+        $(container).removeClass("hoverOPEN")
+        // $(container).find(".map").toggle(100)
+          $(container).find(".social-share-button").hide(100)
+        $(container).find("#downARROW").addClass("fa-angle-double-down ").removeClass("fa-angle-double-up")
+          e.stopPropagation();
+    }
+});
+
       itemName.click(function(e, map){
 
         if ($(this).find("#hidden").is(':hidden')){
@@ -187,7 +207,10 @@ $('.ACC').each(function(){
 
           $(this).find("#downARROW").removeClass("fa-angle-double-down ").addClass("fa-angle-double-up")
             google.maps.event.trigger(maps, 'resize')
+
+
             e.stopPropagation();
+
 
         }
 
