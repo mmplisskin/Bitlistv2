@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
 	    user.location = auth_hash['info']['location']
 	    user.image_url = auth_hash['info']['image']
 	    # user.url = auth_hash['info']['urls'][user.provider.capitalize]
-	    user.email= auth_hash['info']['email']
+	    user.email = auth_hash['info']['email']
+      user.last_login = Time.now
 	    user.save!
 	    user
 	  end

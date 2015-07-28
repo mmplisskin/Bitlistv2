@@ -60,7 +60,8 @@ ActiveRecord::Schema.define(version: 20150722151009) do
     t.string   "image_url"
     t.string   "url"
     t.boolean  "admin",        default: false
-    t.boolean  "email_opt_in", default: false
+    t.boolean  "email_opt_in", default: true
+    t.datetime "last_login"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end

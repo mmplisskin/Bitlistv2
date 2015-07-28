@@ -68,7 +68,7 @@ class UsersController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:email_opt_in)
+    params.require(:user).permit(:email_opt_in, :last_login)
   end
 
   def find_user

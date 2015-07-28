@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :url
       t.boolean :admin, :default => false
       t.boolean :email_opt_in, :default => true
-
+      t.datetime :last_login
       t.timestamps null: false
     end
   end
