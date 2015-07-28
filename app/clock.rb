@@ -17,6 +17,10 @@ module Clockwork
       `rake clear:olditems`
   }
 
+  every(20.days, 'rake send sendemail'){
+    `rake send:email`
+  }
+
   #
   # every(1.day, 'rake clear olditems', :at => ['12:00', '18:00']){
   #     `rake clear:olditems`

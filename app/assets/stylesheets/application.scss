@@ -80,10 +80,11 @@
   /********************************
             app.html
   ********************************/
-  * {
+  *{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+
   }
 
   //nav need media query
@@ -420,6 +421,7 @@
     box-shadow:         inset 0 0 2px #000000;
     background-color: #2D2D2D;
     opacity: .9;
+    /*-webkit-backface-visibility: hidden;*/
 
   }
 
@@ -444,7 +446,14 @@
   }
 
   .well{
+    -webkit-transform: translatez(0);
+   -moz-transform: translatez(0);
+   -ms-transform: translatez(0);
+   -o-transform: translatez(0);
+   transform: translatez(0);
     margin-bottom: 5px !important;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
   .well h1{
