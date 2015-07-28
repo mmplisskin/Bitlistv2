@@ -32,10 +32,19 @@ class UserMailer < ApplicationMailer
 
 
 
-  def item_listed
-    @greeting = "Hi"
+  def item_listed(item_id)
+    @item = Item.find(item_id)
+    @category = Category.find(@item.category_id)
+    @user = User.find(@item.user_id)
+    @email = @user.email
+    @name = @user.name
+    @title = "You Listed a new Item!"
+    @subject = "You Listed a new item in #{@category.name}"
+    @greeting = "Hope it Sells!"
+    @info = "Remember you can always list or delete items at Bitlist"
+    @token = @user.access_token
 
-    mail to: "to@example.org"
+    mail to: @email, subject: @subject
   end
 
 

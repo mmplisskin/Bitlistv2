@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
     @item.user_id = current_user.id
     if @item.save
       flash[:notice] = "#{@item.name} was successfully listed!."
+        UserMailer.delay_for(2.minutes).item_listed(@item.id)
         redirect_to category_item_path(@item.category_id, @item)
     else
       flash.now[:error] = @item.errors.full_messages
