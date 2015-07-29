@@ -9,14 +9,14 @@
  <br />
 
 ##Tech Used
------------------
+
 - Rails 4
 - Postgress
 - Redis
 - JS/Jquery
 
 ## Gems
------------------
+
 - Geocoder
 - Oauth
 - Sidekiq
@@ -26,7 +26,7 @@
 - 12 factor
 
 ## Highlights
------------------
+
 
 #### layout
 - mobile compatible
