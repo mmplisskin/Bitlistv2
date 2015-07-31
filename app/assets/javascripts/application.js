@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require social-share-button
-
+//= require zoom.js
 
 
 //= require_tree .
@@ -120,12 +120,11 @@ $('.ACC').each(function(){
     var map;
 
     $(document).mouseup(function (e)
-{
+      {
     var container = itemName
-
+      // $(this).parent().parent().find("#image").hide()
     if (!container.is(e.target) && $(container).hasClass("hoverOPEN"))
     {
-
         $(container).find("#hidden").css({
             "opacity":"0",
             "display":"block",
@@ -141,16 +140,22 @@ $('.ACC').each(function(){
       itemName.click(function(e, map){
 
         if ($(this).find("#hidden").is(':hidden')){
+
           console.log("div hidden")
+          $(this).parent().parent().find("#image").show()
+          // $(this).parent()("#image").show(400)
           $(this).removeClass("hoverClOSED")
           $(this).addClass("hoverOPEN")
           // $(this).find("#hidden").show(300);
           $(this).find(".social-share-button").show(400)
           $(this).find(".map").show()
+          $(this).find("#item_image").show()
           $(this).find("#hidden").css({
               "opacity":".5",
               "display":"block",
           }).show(400).animate({opacity:1})
+
+
         var lat = $(this).find(".locationLAT")[0].innerHTML
         var long = $(this).find(".locationLON")[0].innerHTML
         var maps = $(this).find(".map")[0]
@@ -209,6 +214,7 @@ $('.ACC').each(function(){
 
 
             e.stopPropagation();
+
 
 
         }

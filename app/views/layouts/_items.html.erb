@@ -58,11 +58,7 @@
         <div class="locationLON" style="display:none;">
           <%= item.longitude %>
         </div>
-        <% if item.image_file_name %>
-          <div class="item_image">
-            <a class="example-image-link" href="<%=item.image.url(:large)%>" data-lightbox="example-1"><img class="example-image" src="<%=item.image.url(:med)%>" alt="image-1" /></a>
-          </div>
-        <% end %>
+
 
 
         <!-- </div> -->
@@ -73,13 +69,24 @@
   <div class="mapContainer">
     <div id="googleMap" class="map"style="width:100%; height:100%"></div>
   </div>
+  <% if item.image_file_name %>
+  <div class="imgContainer">
+    <a class="image-link" id="image" style="display:none" href="<%=item.image.url(:large)%>" data-lightbox="example-1"><img class="image" src="<%=item.image.url(:med)%>" alt="image-1"></a>
+    </div>
+    <% end %>
 
 </div>
+
 
   <%= social_share_button_tag(item.name, :popup => "true", :url => "bitlist.org", :popup => "true") %>
 
 
+
+<!-- $("#item_image").find("a").html( -->
 </div>
+  <!-- <div id="item_image" style="display:none">
+
+  </div> -->
 
   <% end %>
 
