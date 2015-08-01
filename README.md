@@ -50,7 +50,7 @@
 - Old Items are deleted
 - Inactive users are emailed
 
-##### Deploy
+### Deploy
 - unicorn
 - nginx
 - ubuntu
