@@ -49,3 +49,8 @@
 - Average bitcoin rate is calculated every 2 minutes from three api's
 - Old Items are deleted
 - Inactive users are emailed
+
+### Deploy
+- unicorn
+- nginx
+- ubuntu
