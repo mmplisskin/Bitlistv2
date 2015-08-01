@@ -20,6 +20,8 @@
 
   }
 
+
+
   .test h2 i, .test h2 {
     background-image: -webkit-linear-gradient(#337ab7, #209);
    -webkit-background-clip: text;
@@ -176,7 +178,18 @@
   }
   form.navbar-form.navbar-left {
     padding-left: 20px;
-    }
+  }
+
+  .pagination {
+
+    width: 400px;
+}
+
+  .pagination > li > a, .pagination > li > span {
+
+      padding: 17px 12px;
+
+  }
 
 
 
@@ -220,6 +233,26 @@
   a.btn.btn-hidden {
       padding-left: 9%;
   }
+  .pagination {
+
+    width: 400px;
+}
+
+.panel-body {
+    padding: 10px;
+    width: 100%;
+}
+
+.ui.container {
+  margin-left: 0em !important;
+  margin-right: 0em !important;
+  /* width: 100%; */
+  /* margin: 0 auto; */
+  padding: 0;
+}
+
+
+
 
 }
 
@@ -246,9 +279,14 @@
     margin-top: 8vh;
   }
 
-
-  .modal-dialog {
-    padding-top: 28vh;
+  //
+  // .modal-dialog {
+  //   text-align: ce
+  //   padding-top: 28vh;
+  //       overflow: hidden;
+  // }
+  #pageFooter{
+    display: none;
   }
 
   .modal-body{
@@ -542,6 +580,11 @@
 
   }
 
+input#item_image {
+
+    height: 30px;
+    width: 182px;
+}
 
   #item_image{
     width: 100px;

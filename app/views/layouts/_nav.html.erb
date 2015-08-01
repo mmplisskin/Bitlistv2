@@ -32,7 +32,7 @@
             <li><a href="/users/<%=current_user.id%>"><i class="fa fa-user"></i> Account </a></li>
 
           <% elsif !current_user %>
-            <li><a href="/auth/facebook" data-toggle="modal" data-target="#myModal">Login</a></li>
+            <li><a data-toggle="modal" data-target="#myModal">Login</a></li>
           <% end %>
 
           <% if current_user && current_user.admin %>

@@ -1,11 +1,42 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Responsive Email Template</title>
+
+<style type="text/css">
+  .ReadMsgBody {width: 100%; background-color: #ffffff;}
+  .ExternalClass {width: 100%; background-color: #ffffff;}
+  body	 {width: 100%; background-color: #ffffff; margin:0; padding:0; -webkit-font-smoothing: antialiased;font-family: Georgia, Times, serif}
+  table {border-collapse: collapse;}
+
+  @media only screen and (max-width: 640px)  {
+          body[yahoo] .deviceWidth {width:440px!important; padding:0;}
+          body[yahoo] .center {text-align: center!important;}
+      }
+
+  @media only screen and (max-width: 479px) {
+          body[yahoo] .deviceWidth {width:280px!important; padding:0;}
+          body[yahoo] .center {text-align: center!important;}
+      }
+
+</style>
+</head>
+
+
+
 <body style="padding: 0px;margin: 0px;font-family: arial, verdana, sans-serif;font-size: 12px;line-height: 1.5em; background:linear-gradient(white, grey);">
       <center>
-        <table width="600" style="font-size: 12px;line-height: 1.5em;">
+        <table width="600" height="100vh" style="font-size: 12px;line-height: 1.5em;">
+          <img src="http://i.imgur.com/XGwI2Z6.png?1">
           <h1><%= @title %></h1>
           <tr style="font-size: 12px;line-height: 1.5em;">
             <td style="font-size: 12px;line-height: 1.5em;">
-              <div id="header" style="font-size: 12px;line-height: 1.5em;width: 600px;margin: 0 auto;">
-                <img src="http://bitcoin.org/img/icons/opengraph.png">
+              <div id="header" style="font-size: 12px;line-height: 1.5em;width: 600px;margin: 0 auto; text-align:center;">
+                <!-- <img src="http://bitcoin.org/img/icons/opengraph.png" style="width:150px;"> -->
+
               </div>
                 <h2><%= @greeting %><h2>
               <br>
@@ -17,7 +48,7 @@
 
 
             <h2> <%= @info %></h2>
-              <h3>Click <a href="http://bitlist.org">here</a> to get started</h3>
+              <h3>Click <a href="http://bitlists.org">here</a> to get started</h3>
 
             <h4>Click<a href="http://bitlists.org/users/unsubscribe/<%= @token %>">here</a>to unsubscribe</h3>
           </tr>

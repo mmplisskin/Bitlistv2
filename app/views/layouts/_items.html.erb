@@ -20,7 +20,7 @@
   </div>
       <% price = item.price %>
     <div class="col-xs-3 col-sm-2 col-md-3"><h5><%= number_to_currency(price) %></h5></div>
-    <div class="col-xs-1 col-md-1">
+    <div class="col-xs-1 col-md-1 col-sm-1">
           <i class="fa fa-angle-double-down fa-4x" id="downARROW"></i>
     </div>
   </div>
@@ -71,6 +71,7 @@
   </div>
   <% if item.image_file_name %>
   <div class="imgContainer">
+    <i class="fa fa-camera"></i>
     <a class="image-link" id="image" style="display:none" href="<%=item.image.url(:large)%>" data-lightbox="example-1"><img class="image" src="<%=item.image.url(:med)%>" alt="image-1"></a>
     </div>
     <% end %>

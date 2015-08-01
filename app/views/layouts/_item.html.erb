@@ -1,6 +1,6 @@
 <%= bootstrap_form_for (@item) do |f| %>
 
-  <%= f.text_field :name, placeholder: 'i.e. Bitcoin Minnig Rig' %>
+  <%= f.text_field :name, label:'Item Name', placeholder: 'i.e. Bitcoin Minnig Rig' %>
 
   <%= f.text_field :city, placeholder: 'e.x Los Angeles' %>
 
@@ -8,7 +8,7 @@
 
   <%= f.text_field :zipcode , placeholder: '5 digit zipcode'  %>
 
-  <%= f.file_field :image %>
+  <%= f.file_field :image, class:'image-field' %>
 
 
   <%#= file_field_tag "images[]", type: :file, multiple: true %>
