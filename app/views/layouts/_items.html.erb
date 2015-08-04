@@ -72,7 +72,7 @@
   <% if item.image_file_name %>
   <div class="imgContainer">
     <i class="fa fa-camera"></i>
-    <a class="image-link" id="image" style="display:none" href="<%=item.image.url(:large)%>" data-lightbox="example-1"><img class="image" src="<%=item.image.url(:med)%>" alt="image-1"></a>
+    <a class="image-link" id="image" href="<%=item.image.url(:large)%>" data-lightbox="example-1"><img class="image" src="<%=item.image.url(:med)%>" alt="image-1"></a>
     </div>
     <% end %>
 

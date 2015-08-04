@@ -59,7 +59,7 @@
         </div>
         <% if @item.image_file_name %>
           <div class="item_image">
-            <a class="example-image-link" href="<%=item.image.url(:large)%>" data-lightbox="example-1"><img class="example-image" src="<%=item.image.url(:med)%>" alt="image-1" /></a>
+            <a class="example-image-link" href="<%=@item.image.url(:large)%>" data-lightbox="example-1"><img class="example-image" src="<%=@item.image.url(:med)%>" alt="image-1" /></a>
           </div>
         <% end %>
 
