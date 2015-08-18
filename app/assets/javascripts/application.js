@@ -29,91 +29,93 @@
 
   $(function() {
 
-      console.log('The DOM is ready');
-
-      function toggle(selected, map){
-
-        // console.log( $(selected).children().children() )
-
-        var panel = $(selected).children()
-        // console.log($(selected).children().siblings().first().children().last().children().first().addClass("fa-angle-double-down").removeClass("fa-angle-double-up"))
-          console.log($(selected).first())
-          //if pannel is hidden
-          if ( !$(selected).first().hasClass("hoverOPEN") ){
-          //shows the hidden content
-
-          $(panel).velocity("fadeIn", { duration: 500 })
-          //adds class to well removing hover state
-          $(panel).parent().addClass("hoverOPEN")
-          // changes arrow from down to up
-          $(selected).children().siblings().first().children().last().children().first().removeClass("fa-angle-double-down").addClass("fa-angle-double-up")
-            // $(selected).find("#downARROW").removeClass("fa-angle-double-down").addClass("fa-angle-double-up")
-        }
-          //if pannel is displayed
-        else{
-
-          var content = $(panel).first().next()
-          var social = $(panel).first().next().next()
-          // console.log(content)
-          $(content).velocity("fadeOut", { duration: 200 })
-          $(social).velocity("fadeOut", { duration: 200 })
-          $(panel).parent().removeClass("hoverOPEN")
-          $(this).find(".map").toggle(100)
-
-        }
-
-
-
-      }
-
     var acc = $('.ACC')
-
     acc.on("click", function(e , map) {
-
+          //scroll to the div ON CLICK
           $(this)
               .velocity("scroll", {
                           duration: 800,
                           delay: 300,
                           offset: -56
                         });
-          toggle(this)
-
-          var lat = $(this).children().first().next().children().first().children().first().children().last().prev().html()
-
-          var long = $(this).children().first().next().children().first().children().first().children().last().html()
-          var maps = $(this).first().children().first().next().children().last().find(".map")[0]
-            // console.log(lat)
-            // console.log(long)
-
-          function initialize(lat, long, maps){
-               console.log("running init")
-             var myCenter = new google.maps.LatLng(lat,long);
-             var mapProp = {
-                  center: myCenter,
-                  zoom:14,
-
-             };
-
-              map = new google.maps.Map(maps,mapProp);
-             //  google.maps.event.addDomListener(window, 'load', initialize);
-             google.maps.event.addDomListener(window, "resize", function() {
-              var center = map.getCenter();
-              google.maps.event.trigger(map, "resize");
-              map.setCenter(center);
-             });
-
-              google.maps.event.addListener(map, 'bounds_changed', function() {
-                  var bounds = map.getBounds();
-              })
-
-              var marker = new google.maps.Marker({
-                position:myCenter
-              });
-             marker.setMap(map);
-           }
-
-           initialize(lat,long, maps);
+           toggle(this)
      });
+
+
+      // console.log('The DOM is ready');
+      function toggle(selected){
+
+        var map;
+        var panel = $(selected).children()
+
+        var displayPannel = function(selected){
+
+          //define map cordinates and map
+          var maps = $(panel).find(".map")
+          var lat = $(panel).first().next().children().first().children().first().children().last().prev().html()
+          var long = $(panel).first().next().children().first().children().first().children().last().html()
+
+          $(this).find(".map").show()
+          $(panel).velocity("fadeIn", { duration: 500 })
+          // $(map).velocity("fadeIn", { duration: 500 })
+          //adds class to well removing hover state
+          $(panel).parent().addClass("hoverOPEN")
+          // changes arrow from down to up
+          $(selected).children().siblings().first().children().last().children().first().removeClass("fa-angle-double-down").addClass("fa-angle-double-up")
+          google.maps.event.trigger(maps, 'resize')
+          console.log(lat, long, maps)
+          initialize(lat, long, maps);
+
+        }
+
+        var hidePannel = function(selected){
+            //define social map and content to be hidden
+            var content = $(panel).first().next()
+            var social = $(panel).first().next().next()
+            // var map = $(panel).find(".map")
+            //hide the content
+            $(selected).children().siblings().first().children().last().children().first().removeClass("fa-angle-double-up").addClass("fa-angle-double-down")
+            $(content).velocity("fadeOut", { duration: 200 })
+            $(social).velocity("fadeOut", { duration: 200 })
+
+            // $(map).velocity("fadeOut", { duration: 200 })
+            $(panel).parent().removeClass("hoverOPEN")
+        }
+        //run displayPannel if pannel is not open
+        if ( !$(selected).first().hasClass("hoverOPEN") ){
+            displayPannel(selected)
+        }
+        //run hidePannel if the pannel is displayed
+        else if ( $(selected).first().hasClass("hoverOPEN") ){
+            hidePannel(selected)
+        }
+        //WRITE CODE HERE FOR MOUSEUP
+      }
+        //define map function
+        var initialize = function(lat, long, maps){
+             console.log("running init")
+           var myCenter = new google.maps.LatLng(lat,long);
+           var mapProp = {
+                center: myCenter,
+                zoom:14,
+           };
+            map = new google.maps.Map(maps[0] , mapProp);
+           //  google.maps.event.addDomListener(window, 'load', initialize);
+           google.maps.event.addDomListener(window, "resize", function() {
+            var center = map.getCenter();
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(center);
+           });
+
+            google.maps.event.addListener(map, 'bounds_changed', function() {
+                var bounds = map.getBounds();
+            })
+
+            var marker = new google.maps.Marker({
+              position:myCenter
+            });
+           marker.setMap(map);
+      }
 
   });
 
