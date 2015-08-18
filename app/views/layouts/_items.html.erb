@@ -1,6 +1,6 @@
 <div class="panel panel-body">
   <% @items.each do |item| %>
-  <div class="well well-md hover ACC fly" id="itemNAMES">
+  <div class="well well-md ACC fly" id="itemNAMES">
   <div class="row">
     <div class="col-xs-5 col-sm-5 col-md-4" id="itemNAME"><h3><%= item.name %></h3>
       <% if current_user && current_user.id  == item.user_id || current_user && current_user.admin %>

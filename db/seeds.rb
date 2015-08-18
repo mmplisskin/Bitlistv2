@@ -1,11 +1,11 @@
-
-User.destroy_all
-
-Item.destroy_all
-
-Category.destroy_all
-
-Rate.destroy_all
+#
+# User.destroy_all
+#
+# Item.destroy_all
+#
+# Category.destroy_all
+#
+# Rate.destroy_all
 
 rate = Rate.create
 
