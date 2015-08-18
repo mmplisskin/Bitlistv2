@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require social-share-button
-//= require zoom.js
+
 
 
 //= require_tree .
@@ -31,15 +31,15 @@
 
       console.log('The DOM is ready');
 
-      function toggle(selected){
+      function toggle(selected, map){
 
         // console.log( $(selected).children().children() )
 
         var panel = $(selected).children()
-        console.log($(selected).children().siblings().first().children().last().children().first().addClass("fa-angle-double-down").removeClass("fa-angle-double-up"))
-
+        // console.log($(selected).children().siblings().first().children().last().children().first().addClass("fa-angle-double-down").removeClass("fa-angle-double-up"))
+          console.log($(selected).first())
           //if pannel is hidden
-          if ($(panel).is(':hidden')){
+          if ( !$(selected).first().hasClass("hoverOPEN") ){
           //shows the hidden content
 
           $(panel).velocity("fadeIn", { duration: 500 })
@@ -47,18 +47,19 @@
           $(panel).parent().addClass("hoverOPEN")
           // changes arrow from down to up
           $(selected).children().siblings().first().children().last().children().first().removeClass("fa-angle-double-down").addClass("fa-angle-double-up")
-
+            // $(selected).find("#downARROW").removeClass("fa-angle-double-down").addClass("fa-angle-double-up")
         }
           //if pannel is displayed
         else{
 
           var content = $(panel).first().next()
           var social = $(panel).first().next().next()
-          console.log(content)
+          // console.log(content)
           $(content).velocity("fadeOut", { duration: 200 })
           $(social).velocity("fadeOut", { duration: 200 })
-
           $(panel).parent().removeClass("hoverOPEN")
+          $(this).find(".map").toggle(100)
+
         }
 
 
@@ -67,7 +68,7 @@
 
     var acc = $('.ACC')
 
-    acc.on("click", function() {
+    acc.on("click", function(e , map) {
 
           $(this)
               .velocity("scroll", {
@@ -77,16 +78,45 @@
                         });
           toggle(this)
 
+          var lat = $(this).children().first().next().children().first().children().first().children().last().prev().html()
+
+          var long = $(this).children().first().next().children().first().children().first().children().last().html()
+          var maps = $(this).first().children().first().next().children().last().find(".map")[0]
+            // console.log(lat)
+            // console.log(long)
+
+          function initialize(lat, long, maps){
+               console.log("running init")
+             var myCenter = new google.maps.LatLng(lat,long);
+             var mapProp = {
+                  center: myCenter,
+                  zoom:14,
+
+             };
+
+              map = new google.maps.Map(maps,mapProp);
+             //  google.maps.event.addDomListener(window, 'load', initialize);
+             google.maps.event.addDomListener(window, "resize", function() {
+              var center = map.getCenter();
+              google.maps.event.trigger(map, "resize");
+              map.setCenter(center);
+             });
+
+              google.maps.event.addListener(map, 'bounds_changed', function() {
+                  var bounds = map.getBounds();
+              })
+
+              var marker = new google.maps.Marker({
+                position:myCenter
+              });
+             marker.setMap(map);
+           }
+
+           initialize(lat,long, maps);
      });
-
-
-
-
-
 
   });
 
-   console.log('The DOM may not be ready');
 
   // The rest of code goes here!
 
